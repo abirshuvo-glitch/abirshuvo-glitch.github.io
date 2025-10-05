@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="en" data-bs-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Abir Hasan Shuvo — Portfolio</title>
+  <meta name="description" content="Portfolio of Abir Hasan Shuvo — IT/Cybersecurity student in Melbourne (Networking, Web Security, UX for security). Projects, resume, and contact." />
+
+  <!-- SEO basics -->
+  <meta property="og:title" content="Abir Hasan Shuvo — Portfolio" />
+  <meta property="og:description" content="IT/Cybersecurity student in Melbourne. Security, networking, UX for incident response. Projects & contact." />
+  <meta property="og:type" content="website" />
+
+  <!-- Bootstrap 5 CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Icons (Font Awesome) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { min-height: 100vh; }
+    .nav-link { font-weight: 500; }
+    .hero { background: linear-gradient(135deg, rgba(13,110,253,.10), rgba(32,201,151,.10)); border-bottom: 1px solid rgba(0,0,0,.06); }
+    .avatar { width: 128px; height: 128px; border-radius: 999px; object-fit: cover; object-position: 50% 40%; box-shadow: 0 10px 30px rgba(0,0,0,.10); }
+    .gradient-text { background: linear-gradient(90deg, #0d6efd, #20c997); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .project-badges .badge { margin-right: .35rem; margin-bottom: .35rem; }
+    .sticky-top-blur{ backdrop-filter: saturate(180%) blur(8px); background-color: rgba(255,255,255,.65); }
+    [data-bs-theme="dark"] .sticky-top-blur{ background-color: rgba(20,20,20,.55); }
+    .shadow-soft{ box-shadow: 0 10px 30px rgba(0,0,0,.06); }
+    .pill{ border-radius: 999px; }
+    .kudos i{ opacity:.85 }
+    .contact-chip { display:inline-flex; align-items:center; gap:.5rem; padding:.625rem .9rem; border:1px solid var(--bs-border-color); border-radius:999px; text-decoration:none; }
+    .contact-chip:hover { background: var(--bs-body-bg); box-shadow: 0 8px 18px rgba(0,0,0,.06); }
+    .section-hint{ color: var(--bs-secondary-color); font-size: .9rem; }
+  </style>
+  
+  <!-- JSON-LD (updated credentials) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Abir Hasan Shuvo",
+    "email": "mailto:abirshuvo000@gmail.com",
+    "url": "https://example.com/",
+    "sameAs": [
+      "https://www.linkedin.com/in/abir-hasan-shuvo-762961308"
+    ],
+    "jobTitle": "IT/Cybersecurity Student",
+    "address": {"@type":"PostalAddress","addressLocality":"Melbourne","addressRegion":"VIC","addressCountry":"AU"},
+    "hasCredential": [
+      {
+        "@type": "EducationalOccupationalCredential",
+        "name": "CCNA: Introduction to Cybersecurity",
+        "recognizedBy": { "@type": "Organization", "name": "Cisco Networking Academy" },
+        "credentialCategory": "Certification"
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        "name": "Introduction to Data Science",
+        "recognizedBy": { "@type": "Organization", "name": "Cisco Networking Academy" },
+        "credentialCategory": "Course Certificate"
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg sticky-top sticky-top-blur border-bottom">
+    <div class="container">
+      <a class="navbar-brand fw-semibold" href="#home">&lt;AbirShuvo.dev/&gt;</a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="nav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#certs">Certifications</a></li>
+          <li class="nav-item"><a class="nav-link" href="#coursework">Coursework</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item ms-lg-3">
+            <button id="themeToggle" class="btn btn-outline-secondary btn-sm" type="button" aria-label="Toggle dark mode">
+              <i class="fa-solid fa-moon"></i>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero / Home -->
+  <header id="home" class="hero py-5 py-md-6">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-md-8">
+          <span class="pill px-3 py-1 bg-primary-subtle text-primary fw-semibold small shadow-soft">Cybersecurity • Networking • UX for Security</span>
+          <h1 class="display-5 fw-bold my-3 gradient-text">Hi, I'm Abir Hasan Shuvo</h1>
+          <p class="lead mb-4">IT/Cybersecurity student in Melbourne focused on networking, secure web, and human-centred security. I build practical tools, document cleanly, and ship fast.</p>
+          <div class="d-flex gap-3 flex-wrap">
+            <a class="btn btn-primary btn-lg" href="#projects"><i class="fa-solid fa-code me-2"></i>View Projects</a>
+            <a class="btn btn-outline-dark btn-lg" href="assets/Abir-Hasan-Shuvo-CV.pdf" target="_blank"><i class="fa-solid fa-file-arrow-down me-2"></i>Download CV</a>
+            <a class="btn btn-outline-info btn-lg" href="https://www.linkedin.com/in/abir-hasan-shuvo-762961308" target="_blank"><i class="fa-brands fa-linkedin me-2"></i>LinkedIn</a>
+            <a class="btn btn-outline-primary btn-lg" href="#contact"><i class="fa-solid fa-envelope me-2"></i>Email</a>
+          </div>
+        </div>
+        <div class="col-md-4 text-md-end text-center">
+          <img class="avatar" src="assets/abir-headshot.jpg" alt="Headshot of Abir Hasan Shuvo" />
+          <div class="form-text"></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- About -->
+  <section id="about" class="py-5">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-7">
+          <h2 class="h1 mb-3">About</h2>
+          <p>Second-year <strong>Cybersecurity</strong> student with hands-on experience across <em>Python, SQL, HTML/CSS, networking</em> and security fundamentals (OWASP, MFA, zero trust). I enjoy turning messy problems into clear, accessible systems that people actually use.</p>
+          <ul class="list-unstyled small">
+            <li><i class="fa-solid fa-check me-2 text-success"></i>Currently diving into: <strong>OWASP Top 10</strong>, <strong>Linux hardening</strong>, and <strong>Cloud basics</strong>.</li>
+            <li><i class="fa-solid fa-check me-2 text-success"></i>Open to: part-time IT support, junior analyst, and internships.</li>
+            <li><i class="fa-solid fa-check me-2 text-success"></i>Based in <strong>Melbourne, Australia</strong>.</li>
+          </ul>
+        </div>
+        <div class="col-lg-5">
+          <div class="p-4 border rounded-4 h-100 shadow-soft">
+            <h3 class="h5 mb-3">Skills</h3>
+            <div class="row g-2 small">
+              <div class="col-6"><div class="fw-semibold">Languages</div><div>Python, SQL, HTML/CSS</div></div>
+              <div class="col-6"><div class="fw-semibold">Tools</div><div>Git/GitHub, Wireshark, Burp</div></div>
+              <div class="col-6"><div class="fw-semibold">Networking</div><div>CCNA basics (in progress), Subnetting</div></div>
+              <div class="col-6"><div class="fw-semibold">Security</div><div>OWASP, MFA, ZTA basics</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="py-5 bg-body-secondary">
+    <div class="container">
+      <div class="d-flex align-items-center justify-content-between mb-3">
+        <h2 class="h1 m-0">Featured Projects</h2>
+        <span class="text-muted small">More work available on request</span>
+      </div>
+
+      <div class="row g-4">
+        <!-- Project 1 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body d-flex flex-column">
+              <h3 class="h5 card-title">Zenith Logistics — Cybersecurity Audit</h3>
+              <p class="card-text">Applied the OCTAVE risk framework to a logistics provider; prioritized risks (MFA, IR playbooks, ZTA) and mapped controls across Prevent/Detect/Correct.</p>
+              <div class="project-badges mb-3">
+                <span class="badge text-bg-warning">Risk</span>
+                <span class="badge text-bg-dark">OCTAVE</span>
+                <span class="badge text-bg-success">Mitigation</span>
+              </div>
+              <div class="mt-auto d-flex gap-2">
+                <a class="btn btn-primary btn-sm" target="_blank" href="assets/Abir-Cybersecurity-Status-Report.pdf"><i class="fa-solid fa-file-lines me-1"></i>Report (PDF)</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Project 2 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body d-flex flex-column">
+              <h3 class="h5 card-title">TRADIE Incident Response — UX Prototype</h3>
+              <p class="card-text">Designed incident reporting form & dashboard in Figma with accessibility (WCAG) and clarity for high-stress workflows.</p>
+              <div class="project-badges mb-3">
+                <span class="badge text-bg-secondary">UX</span>
+                <span class="badge text-bg-info">WCAG</span>
+                <span class="badge text-bg-secondary">Figma</span>
+              </div>
+              <div class="mt-auto d-flex gap-2">
+                <a class="btn btn-primary btn-sm" target="_blank" href="assets/Abir-Project-Reflection.pdf"><i class="fa-solid fa-file-lines me-1"></i>Reflection (PDF)</a>
+                <a class="btn btn-outline-secondary btn-sm" target="_blank" href="assets/Abir-Spike-Report.pdf"><i class="fa-solid fa-shield-halved me-1"></i>Spike (PDF)</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Project 3 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body d-flex flex-column">
+              <h3 class="h5 card-title">Fresh Bites — Digital System Analysis</h3>
+              <p class="card-text">Analysed a meal-delivery SME; produced stakeholder map, epics/user stories, activity diagrams, and ERD for a scalable platform.</p>
+              <div class="project-badges mb-3">
+                <span class="badge text-bg-primary">BA</span>
+                <span class="badge text-bg-dark">ERD</span>
+                <span class="badge text-bg-success">User Stories</span>
+              </div>
+              <div class="mt-auto d-flex gap-2">
+                <a class="btn btn-primary btn-sm" target="_blank" href="assets/Abir-FreshBites-Analysis.pdf"><i class="fa-solid fa-file-lines me-1"></i>Case (PDF)</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mini projects strip -->
+      <div class="row g-3 mt-1">
+        <div class="col-12"><h3 class="h6 text-uppercase text-muted mb-0">Mini Projects</h3></div>
+        <div class="col-md-4">
+          <div class="p-3 border rounded-3 h-100">
+            <div class="fw-semibold">Net Scanner CLI</div>
+            <div class="small text-muted">Python tool to ping subnet & list live hosts (labs).</div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-3 border rounded-3 h-100">
+            <div class="fw-semibold">SQLi Practice Lab</div>
+            <div class="small text-muted">Deliberately vulnerable mini-app to practise parameterised queries.</div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-3 border rounded-3 h-100">
+            <div class="fw-semibold">Incident Dashboard (Mock)</div>
+            <div class="small text-muted">Static Bootstrap dashboard for triage & severity tagging.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Licences & Certifications -->
+  <section id="certs" class="py-5">
+    <div class="container">
+      <div class="d-flex align-items-center justify-content-between mb-3">
+        <h2 class="h1 m-0"> Certifications</h2>
+        <span class="text-muted small">Verified links where possible</span>
+      </div>
+
+      <div class="row g-4">
+        <!-- Item: CCNA Intro to Cybersecurity (earned) -->
+        <div class="col-md-6 col-lg-4">
+          <div class="p-4 border rounded-4 h-100 shadow-soft">
+            <div class="d-flex align-items-center justify-content-between">
+              <div class="fw-semibold">CCNA: Introduction to Cybersecurity</div>
+              <span class="badge text-bg-success">Earned</span>
+            </div>
+            <div class="small text-muted">Cisco Networking Academy</div>
+            <ul class="mt-2 small text-body-secondary mb-3">
+              <li>Threats, vulnerabilities, CIA triad, basic controls</li>
+              <li>Security careers, ethics, and safe online behaviour</li>
+            </ul>
+            <div class="d-flex gap-2">
+              <!-- Put your actual file/URL here -->
+              <a class="btn btn-outline-primary btn-sm" target="_blank" href="assets/netacad-intro-to-cybersecurity.pdf">
+                <i class="fa-solid fa-file-lines me-1"></i>View Certificate
+              </a>
+              <a class="btn btn-outline-secondary btn-sm" target="_blank" href="https://www.credly.com/badges/9012dfb0-f33c-4586-b455-36633289f149/public_url">
+                <i class="fa-solid fa-award me-1"></i>Verify
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item: CCNA Networking Basics (still in progress) -->
+        <div class="col-md-6 col-lg-4">
+          <div class="p-4 border rounded-4 h-100 shadow-soft">
+            <div class="d-flex align-items-center justify-content-between">
+              <div class="fw-semibold">CCNA: Networking Basics</div>
+              <span class="badge text-bg-secondary">In progress</span>
+            </div>
+            <div class="small text-muted">Cisco Networking Academy</div>
+            <ul class="mt-2 small text-body-secondary mb-3">
+              <li>Subnetting, routing &amp; switching fundamentals</li>
+              <li>Labs: addressing, packet capture (Wireshark)</li>
+            </ul>
+            <div class="d-flex gap-2">
+              <button class="btn btn-outline-secondary btn-sm disabled"><i class="fa-solid fa-award me-1"></i>Verify</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item: Junior Cybersecurity Analyst — Career Path (in progress) -->
+        <div class="col-md-6 col-lg-4">
+          <div class="p-4 border rounded-4 h-100 shadow-soft">
+            <div class="d-flex align-items-center justify-content-between">
+              <div class="fw-semibold">Junior Cybersecurity Analyst — Career Path</div>
+              <span class="badge text-bg-info">In progress</span>
+            </div>
+            <div class="small text-muted">Focus: SOC fundamentals & early-career ops</div>
+            <ul class="mt-2 small text-body-secondary mb-3">
+              <li>SIEM &amp; log triage (Windows Event Logs, Splunk)</li>
+              <li>Alert handling &amp; playbooks: phishing, malware, brute-force</li>
+              <li>Vuln mgmt basics: CVSS, patch/compensating controls</li>
+              <li>Network fundamentals for defenders: TCP/IP, subnets, ports</li>
+              <li>Scripting for analysts: Python snippets for parsing/log enrichment</li>
+              <li>Ticket hygiene, comms, and incident documentation quality</li>
+            </ul>
+            <div class="d-flex flex-wrap gap-2">
+              <span class="badge text-bg-dark">SOC</span>
+              <span class="badge text-bg-primary">SIEM</span>
+              <span class="badge text-bg-success">Playbooks</span>
+              <span class="badge text-bg-secondary">Python</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+     
+    </div>
+  </section>
+
+  <!-- Coursework -->
+  <section id="coursework" class="py-5">
+    <div class="container">
+      <h2 class="h1 mb-3">Coursework Highlights</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="p-4 border rounded-4 h-100 shadow-soft">
+            <div class="fw-semibold mb-1">CLA #1 — Data Breaches</div>
+            <div class="small text-muted">CIA triad analysis &amp; Australian breach cases.</div>
+            <a class="btn btn-outline-primary btn-sm mt-3" target="_blank" href="assets/Abir-CLA1.pdf">Read (PDF)</a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-4 border rounded-4 h-100 shadow-soft">
+            <div class="fw-semibold mb-1">CLA #2 — Risk Appetite &amp; Missions</div>
+            <div class="small text-muted">RBA appetite; Uni Melbourne/Zenith missions.</div>
+            <a class="btn btn-outline-primary btn-sm mt-3" target="_blank" href="assets/Abir-CLA2.pdf">Read (PDF)</a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-4 border rounded-4 h-100 shadow-soft">
+            <div class="fw-semibold mb-1">CLA #3 — BCP, RTO &amp; Comms</div>
+            <div class="small text-muted">LogiFlow ransomware scenarios; IRACI roles.</div>
+            <a class="btn btn-outline-primary btn-sm mt-3" target="_blank" href="assets/Abir-CLA3.pdf">Read (PDF)</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-5">
+    <div class="container">
+      <h2 class="h1 mb-2">Contact</h2>
+      <p class="mb-4">Best way to reach me is email or LinkedIn. I'm open to internships, part-time roles, and project collaborations.</p>
+      <div class="row g-4">
+        <!-- Contact chips -->
+        <div class="col-lg-6">
+          <div class="p-4 border rounded-4 h-100 d-flex flex-column justify-content-between">
+            <div class="d-flex flex-wrap gap-3">
+              <a class="contact-chip" href="mailto:abirshuvo000@gmail.com">
+                <i class="fa-solid fa-envelope"></i><span>Email</span>
+              </a>
+              <a class="contact-chip" target="_blank" href="https://www.linkedin.com/in/abir-hasan-shuvo-762961308/">
+                <i class="fa-brands fa-linkedin"></i><span>LinkedIn</span>
+              </a>
+              <a class="contact-chip" target="_blank" href="https://github.com/abirshuvo-glitch">
+  <i class="fa-brands fa-github"></i><span>GitHub</span>
+</a>
+
+            </div>
+            <div class="mt-3 small text-muted">Average response: within 24–48 hours (AEST).</div>
+          </div>
+        </div>
+
+        <!-- Deploy-ready mailto form -->
+        <div class="col-lg-6">
+          <form id="contactForm" class="p-4 border rounded-4" novalidate>
+            <div class="mb-3">
+              <label class="form-label" for="name">Name</label>
+              <input id="name" name="name" type="text" class="form-control" placeholder="Your name" required />
+              <div class="invalid-feedback">Please enter your name.</div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="email">Email</label>
+              <input id="email" name="email" type="email" class="form-control" placeholder="you@example.com" required />
+              <div class="invalid-feedback">Please provide a valid email.</div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="message">Message</label>
+              <textarea id="message" name="message" class="form-control" rows="4" placeholder="Hi! I'd like to talk about..." required></textarea>
+              <div class="invalid-feedback">Please write a short message.</div>
+            </div>
+            <button id="sendBtn" type="submit" class="btn btn-primary w-100">
+              <i class="fa-solid fa-paper-plane me-2"></i>Send
+            </button>
+            <div id="formNote" class="form-text mt-2 d-none">Opening your email client…</div>
+          </form>
+        </div>
+      </div>
+
+      <div class="kudos mt-5 small text-muted">
+        <i class="fa-solid fa-universal-access me-2"></i>Accessible font sizes &amp; contrast • <i class="fa-solid fa-magnifying-glass me-2 ms-2"></i>SEO &amp; schema • <i class="fa-solid fa-moon me-2 ms-2"></i>Dark mode
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-4 border-top">
+    <div class="container d-flex flex-wrap align-items-center justify-content-between small">
+      <div>© <span id="year"></span> Abir Hasan Shuvo. All rights reserved.</div>
+      <div class="d-flex gap-3">
+        <a href="#home">Top</a>
+        <a target="_blank" href="assets/Abir-Hasan-Shuvo-CV.pdf">CV</a>
+        <a target="_blank" href="#projects">Source on request</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Theme toggle with persistence
+    (function(){
+      const root = document.documentElement;
+      const key = 'pref-theme';
+      const btn = document.getElementById('themeToggle');
+      const saved = localStorage.getItem(key);
+      if (saved) root.setAttribute('data-bs-theme', saved);
+      btn?.addEventListener('click', () => {
+        const cur = root.getAttribute('data-bs-theme') || 'light';
+        const next = cur === 'light' ? 'dark' : 'light';
+        root.setAttribute('data-bs-theme', next);
+        localStorage.setItem(key, next);
+      });
+    })();
+
+    // Deploy-ready mailto contact
+    (function(){
+      const form = document.getElementById('contactForm');
+      const note = document.getElementById('formNote');
+      const btn  = document.getElementById('sendBtn');
+
+      function validateEmail(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }
+
+      form?.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = document.getElementById('name');
+        const email = document.getElementById('email');
+        const message = document.getElementById('message');
+
+        let ok = true;
+        [name, email, message].forEach(i => {
+          if(!i.value.trim() || (i===email && !validateEmail(i.value))) {
+            i.classList.add('is-invalid'); ok = false;
+          } else { i.classList.remove('is-invalid'); }
+        });
+        if(!ok) return;
+
+        const subject = encodeURIComponent(`Portfolio contact from ${name.value}`);
+        const body = encodeURIComponent(`${message.value}\n\n— ${name.value}\n${email.value}`);
+        note.classList.remove('d-none');
+        btn.disabled = true;
+        window.location.href = `mailto:abirshuvo000@gmail.com?subject=${subject}&body=${body}`;
+        setTimeout(()=>{ btn.disabled = false; note.classList.add('d-none'); }, 2500);
+      });
+    })();
+  </script>
+</body>
+</html>
