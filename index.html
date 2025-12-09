@@ -1288,21 +1288,61 @@
       margin-top: 0.4rem;
     }
 
-    /* FOOTER */
-    footer {
-      border-top: 1px solid rgba(148, 163, 184, 0.4);
-      padding: 1.1rem 0 1.3rem;
-      margin-top: 0.75rem;
-      background: rgba(5, 8, 22, 0.98);
+    /* FOOTER (new) */
+    .footer {
+      padding: 2.2rem 0 1.6rem;
+      background: rgba(5, 8, 22, 0.96);
+      border-top: 1px solid rgba(148, 163, 184, 0.32);
+      backdrop-filter: blur(14px);
+      margin-top: 3rem;
     }
 
     .footer-inner {
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       justify-content: space-between;
-      gap: 1rem;
-      font-size: 0.78rem;
+      gap: 2rem;
+    }
+
+    .footer-brand {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #f9fafb;
+      margin-bottom: 0.3rem;
+    }
+
+    .footer-tagline {
       color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    .footer-links {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-link {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      text-decoration: none;
+      transition: color 0.15s ease-out;
+    }
+
+    .footer-link:hover {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .footer-bottom {
+      margin-top: 1.8rem;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.78rem;
+      border-top: 1px solid rgba(148, 163, 184, 0.22);
+      padding-top: 1rem;
     }
 
     @media (max-width: 700px) {
@@ -1310,23 +1350,6 @@
         flex-direction: column;
         align-items: flex-start;
       }
-    }
-
-    .footer-links {
-      display: flex;
-      align-items: center;
-      gap: 0.9rem;
-      flex-wrap: wrap;
-    }
-
-    .footer-links a {
-      color: var(--text-muted);
-      text-decoration: none;
-    }
-
-    .footer-links a:hover {
-      color: var(--accent);
-      text-decoration: none;
     }
 
     /* REVEAL ANIMATIONS */
@@ -2029,14 +2052,23 @@
   </main>
 
   <!-- FOOTER -->
-  <footer>
+  <footer class="footer">
     <div class="container footer-inner">
-      <div>© <span id="year"></span> Abir Hasan Shuvo. All rights reserved.</div>
-      <div class="footer-links">
-        <a href="#top">Back to top</a>
-        <a href="assets/Abir-Hasan-Shuvo-CV.pdf" target="_blank" rel="noopener">CV</a>
-        <span>Security-themed portfolio for student &amp; founder roles.</span>
+      <div class="footer-left">
+        <div class="footer-brand">&lt;abir.shuvo /&gt;</div>
+        <p class="footer-tagline">Designing secure, calm, user-first systems.</p>
       </div>
+
+      <div class="footer-links">
+        <a class="footer-link" href="assets/Abir-Hasan-Shuvo-CV.pdf" target="_blank">CV</a>
+        <a class="footer-link" href="https://github.com/abirshuvo-glitch" target="_blank">GitHub</a>
+        <a class="footer-link" href="https://www.linkedin.com/in/abir-hasan-shuvo-762961308/" target="_blank">LinkedIn</a>
+        <a class="footer-link" href="javascript:void(0)" id="backToTop">Back to top ↑</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      © <span id="year"></span> Abir Hasan Shuvo. All rights reserved.
     </div>
   </footer>
 
@@ -2136,6 +2168,16 @@
         if (note) note.style.display = "none";
       }, 2500);
     });
+
+    // Smooth Back to Top
+    const backToTop = document.getElementById("backToTop");
+    backToTop?.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    });
   </script>
 </body>
 </html>
+
