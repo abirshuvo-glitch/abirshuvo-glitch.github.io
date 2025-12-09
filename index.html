@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Abir Hasan Shuvo — Cybersecurity Portfolio</title>
-  <meta name="description" content="Abir Hasan Shuvo — Cybersecurity & IT student in Melbourne. SOC, networking, risk, secure systems and DokanBondhu founder. Projects, certifications, and contact." />
+  <title>Abir Hasan Shuvo — Cybersecurity & Startup Portfolio</title>
+  <meta name="description" content="Abir Hasan Shuvo — Cybersecurity-focused IT student and founder of DokanBondhu. Projects, security coursework, and startup work from Melbourne." />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Abir Hasan Shuvo — Cybersecurity Portfolio" />
-  <meta property="og:description" content="Cybersecurity-focused IT student and DokanBondhu founder in Melbourne. SOC, risk, networking, and secure web." />
+  <meta property="og:title" content="Abir Hasan Shuvo — Cybersecurity & Startup Portfolio" />
+  <meta property="og:description" content="Cybersecurity + networking student in Melbourne, building DokanBondhu and security-flavoured projects." />
   <meta property="og:type" content="website" />
 
   <!-- Fonts -->
@@ -20,18 +20,17 @@
   <style>
     :root {
       --bg: #050816;
-      --panel: #080b1f;
-      --panel-alt: #0b1027;
+      --panel: #050918;
+      --panel-alt: #080d20;
       --accent: #00f6ff;
       --accent-alt: #38bdf8;
-      --accent-soft: rgba(0, 246, 255, 0.4);
-      --accent-strong: rgba(0, 246, 255, 0.85);
-      --accent-warn: #ffda6a;
+      --accent-soft: rgba(0, 246, 255, 0.24);
+      --accent-strong: rgba(0, 246, 255, 0.95);
       --text: #e5f5ff;
       --text-muted: #8b97b4;
-      --border-subtle: rgba(255, 255, 255, 0.06);
-      --shadow-soft: 0 24px 60px rgba(0, 0, 0, 0.8);
-      --radius-xl: 24px;
+      --border-subtle: rgba(148, 163, 184, 0.3);
+      --shadow-soft: 0 24px 60px rgba(0, 0, 0, 0.85);
+      --radius-xl: 22px;
       --radius-lg: 18px;
       --radius-pill: 999px;
       --nav-height: 72px;
@@ -49,14 +48,13 @@
       margin: 0;
       min-height: 100vh;
       color: var(--text);
-      font-family: "Space Grotesk", system-ui, -apple-system, BlinkMacSystemFont,
-        "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top, #151c3a 0, #050816 45%, #02030a 90%);
+      font-family: "Space Grotesk", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #141b36 0, #050816 46%, #02030a 100%);
       overflow-x: hidden;
       position: relative;
     }
 
-    /* Cyber grid background + animation */
+    /* Cyber grid background */
     body::before {
       content: "";
       position: fixed;
@@ -78,19 +76,15 @@
       inset: -40%;
       background:
         radial-gradient(circle at 10% 10%, rgba(0, 246, 255, 0.16), transparent 55%),
-        radial-gradient(circle at 80% 80%, rgba(168, 85, 247, 0.25), transparent 60%);
-      opacity: 0.6;
+        radial-gradient(circle at 82% 80%, rgba(168, 85, 247, 0.25), transparent 60%);
+      opacity: 0.65;
       filter: blur(12px);
       z-index: -3;
     }
 
     @keyframes gridPan {
-      0% {
-        background-position: 0 0, 0 0;
-      }
-      100% {
-        background-position: 80px 80px, 80px 80px;
-      }
+      0% { background-position: 0 0, 0 0; }
+      100% { background-position: 80px 80px, 80px 80px; }
     }
 
     a {
@@ -124,10 +118,11 @@
       top: 0;
       z-index: 40;
       height: var(--nav-height);
-      backdrop-filter: blur(18px);
-      background: radial-gradient(circle at top, rgba(0, 246, 255, 0.16), transparent 60%),
-                  rgba(5, 8, 22, 0.96);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(20px);
+      background:
+        radial-gradient(circle at top, rgba(0, 246, 255, 0.16), transparent 60%),
+        rgba(5, 8, 22, 0.96);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.2);
     }
 
     .nav-inner {
@@ -140,22 +135,21 @@
     .nav-left {
       display: flex;
       align-items: center;
-      gap: 0.75rem;
+      gap: 0.7rem;
     }
 
     .logo-badge {
-      padding: 0.35rem 0.7rem;
+      padding: 0.3rem 0.75rem;
       border-radius: var(--radius-pill);
-      border: 1px solid rgba(0, 246, 255, 0.35);
-      background: radial-gradient(circle at top left, rgba(0, 246, 255, 0.25), transparent 70%);
-      font-size: 0.78rem;
+      border: 1px solid rgba(0, 246, 255, 0.45);
+      background: radial-gradient(circle at top left, rgba(0, 246, 255, 0.2), transparent 70%);
+      font-size: 0.76rem;
       letter-spacing: 0.08em;
       text-transform: uppercase;
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
-      font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco,
-        Consolas, "Liberation Mono", "Courier New", monospace;
+      gap: 0.4rem;
+      font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Courier New", monospace;
     }
 
     .logo-dot {
@@ -171,22 +165,21 @@
       font-size: 1rem;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: var(--text);
-      font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco,
-        Consolas, "Liberation Mono", "Courier New", monospace;
+      color: #f9fafb;
+      font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Courier New", monospace;
     }
 
     .nav-links {
       display: flex;
       align-items: center;
       gap: 1.5rem;
-      font-size: 0.88rem;
+      font-size: 0.86rem;
     }
 
     .nav-link {
       position: relative;
       text-transform: uppercase;
-      letter-spacing: 0.14em;
+      letter-spacing: 0.16em;
       font-weight: 500;
       color: var(--text-muted);
       cursor: pointer;
@@ -196,15 +189,11 @@
       font: inherit;
     }
 
-    .nav-link span {
-      opacity: 0.9;
-    }
-
     .nav-link::after {
       content: "";
       position: absolute;
       left: 0;
-      bottom: -0.3rem;
+      bottom: -0.35rem;
       width: 0%;
       height: 2px;
       background: linear-gradient(90deg, var(--accent), #a855f7);
@@ -223,32 +212,34 @@
     .nav-cta {
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
-      padding: 0.5rem 0.95rem;
+      gap: 0.45rem;
+      padding: 0.45rem 0.95rem;
       border-radius: var(--radius-pill);
-      border: 1px solid rgba(0, 246, 255, 0.4);
-      background: radial-gradient(circle at top left, rgba(0, 246, 255, 0.24), transparent 65%), rgba(5, 8, 22, 0.9);
-      color: var(--text);
-      font-size: 0.8rem;
+      border: 1px solid rgba(0, 246, 255, 0.5);
+      background:
+        radial-gradient(circle at top left, rgba(0, 246, 255, 0.24), transparent 75%),
+        rgba(5, 8, 22, 0.95);
+      color: #f9fafb;
+      font-size: 0.78rem;
       text-transform: uppercase;
       letter-spacing: 0.12em;
       font-weight: 600;
-      text-decoration: none;
       box-shadow: 0 0 0 1px rgba(0, 246, 255, 0.1);
     }
 
-    .nav-cta i {
-      font-size: 0.85rem;
+    .nav-cta:hover {
+      text-decoration: none;
+      box-shadow: 0 16px 32px rgba(0, 246, 255, 0.32);
     }
 
     .nav-toggle {
       display: none;
       font-size: 1.1rem;
       border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(148, 163, 184, 0.6);
       padding: 0.35rem 0.6rem;
-      background: rgba(5, 8, 22, 0.85);
-      color: var(--text);
+      background: rgba(5, 8, 22, 0.95);
+      color: #e5f5ff;
     }
 
     @media (max-width: 768px) {
@@ -265,10 +256,10 @@
       .nav--open .nav-links {
         position: absolute;
         inset: var(--nav-height) 0 auto 0;
-        padding: 1rem 1.25rem 1.25rem;
+        padding: 0.9rem 1.25rem 1.2rem;
         background: rgba(5, 8, 22, 0.98);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-        backdrop-filter: blur(18px);
+        border-bottom: 1px solid rgba(148, 163, 184, 0.3);
+        backdrop-filter: blur(20px);
         flex-direction: column;
         align-items: flex-start;
         gap: 1rem;
@@ -288,16 +279,15 @@
 
     .hero-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.6fr) minmax(0, 1.1fr);
-      gap: 2.5rem;
+      grid-template-columns: minmax(0, 1.7fr) minmax(0, 1.1fr);
+      gap: 2.4rem;
       align-items: center;
     }
 
     @media (max-width: 900px) {
       .hero {
-        padding-top: 2.75rem;
+        padding-top: 2.8rem;
       }
-
       .hero-grid {
         grid-template-columns: minmax(0, 1fr);
       }
@@ -307,7 +297,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 0.6rem;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.4rem;
     }
 
     .chip {
@@ -316,12 +306,12 @@
       font-size: 0.74rem;
       text-transform: uppercase;
       letter-spacing: 0.16em;
-      border: 1px solid rgba(255, 255, 255, 0.18);
+      border: 1px solid rgba(148, 163, 184, 0.5);
       color: var(--text-muted);
       display: inline-flex;
       align-items: center;
       gap: 0.45rem;
-      background: rgba(8, 11, 31, 0.9);
+      background: rgba(8, 11, 31, 0.94);
       backdrop-filter: blur(16px);
     }
 
@@ -334,16 +324,16 @@
     }
 
     .chip--online {
-      border-color: rgba(0, 246, 255, 0.45);
+      border-color: rgba(0, 246, 255, 0.6);
       color: var(--accent);
       background: rgba(0, 246, 255, 0.08);
     }
 
     .hero-title {
-      font-size: clamp(2.4rem, 4vw, 3.1rem);
-      line-height: 1.1;
-      margin: 0 0 0.7rem;
-      letter-spacing: 0.02em;
+      font-size: clamp(2.5rem, 4vw, 3.2rem);
+      line-height: 1.08;
+      margin: 0 0 0.8rem;
+      letter-spacing: 0.01em;
       color: #f9fafb;
     }
 
@@ -352,13 +342,22 @@
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
+      background-size: 200% 200%;
+      animation: titleGlow 18s ease-in-out infinite;
+    }
+
+    @keyframes titleGlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
     .hero-sub {
       font-size: 1rem;
       color: var(--text-muted);
-      max-width: 38rem;
-      margin-bottom: 1.65rem;
+      max-width: 40rem;
+      margin-bottom: 1.7rem;
+      line-height: 1.6;
     }
 
     .hero-sub strong {
@@ -378,15 +377,19 @@
       align-items: center;
       justify-content: center;
       gap: 0.55rem;
-      padding: 0.7rem 1.2rem;
+      padding: 0.72rem 1.25rem;
       border-radius: var(--radius-pill);
       border: 1px solid transparent;
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       font-weight: 600;
       cursor: pointer;
       text-decoration: none;
-      transition: transform 0.16s ease-out, box-shadow 0.16s ease-out,
-        background 0.16s ease-out, border-color 0.16s ease-out, color 0.16s ease-out;
+      transition:
+        transform 0.16s ease-out,
+        box-shadow 0.16s ease-out,
+        background 0.16s ease-out,
+        border-color 0.16s ease-out,
+        color 0.16s ease-out;
       letter-spacing: 0.08em;
       text-transform: uppercase;
     }
@@ -399,37 +402,36 @@
 
     .btn-primary:hover {
       transform: translateY(-1px);
-      box-shadow: 0 22px 55px rgba(0, 246, 255, 0.52);
+      box-shadow: 0 22px 56px rgba(0, 246, 255, 0.52);
       text-decoration: none;
     }
 
     .btn-ghost {
       background: transparent;
-      border-color: rgba(255, 255, 255, 0.22);
+      border-color: rgba(148, 163, 184, 0.85);
       color: var(--text);
     }
 
     .btn-ghost:hover {
-      background: rgba(15, 23, 42, 0.9);
-      border-color: rgba(0, 246, 255, 0.5);
-      box-shadow: 0 12px 32px rgba(15, 23, 42, 0.9);
+      background: rgba(15, 23, 42, 0.96);
+      border-color: rgba(0, 246, 255, 0.6);
+      box-shadow: 0 14px 38px rgba(15, 23, 42, 0.95);
       text-decoration: none;
     }
 
     .btn-soft {
-      background: rgba(15, 23, 42, 0.7);
-      border-color: rgba(148, 163, 184, 0.5);
+      background: rgba(15, 23, 42, 0.9);
+      border-color: rgba(148, 163, 184, 0.7);
       color: var(--text-muted);
     }
 
     .btn-soft:hover {
-      background: rgba(15, 23, 42, 0.9);
-      border-color: rgba(0, 246, 255, 0.45);
-      color: var(--text);
+      background: rgba(15, 23, 42, 0.98);
+      border-color: rgba(0, 246, 255, 0.5);
+      color: #e5f5ff;
       text-decoration: none;
     }
 
-    /* HERO STATUS: flex so nothing overlaps */
     .hero-status-grid {
       display: flex;
       flex-wrap: wrap;
@@ -444,12 +446,13 @@
       flex: 1 1 150px;
       padding: 0.6rem 0.75rem;
       border-radius: var(--radius-lg);
-      border: 1px solid rgba(148, 163, 184, 0.3);
-      background: radial-gradient(circle at top left, rgba(0, 246, 255, 0.18), transparent 65%),
-                  rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.55);
+      background:
+        radial-gradient(circle at top left, rgba(0, 246, 255, 0.16), transparent 65%),
+        rgba(15, 23, 42, 0.96);
       display: flex;
       flex-direction: column;
-      gap: 0.2rem;
+      gap: 0.15rem;
     }
 
     .status-label {
@@ -467,18 +470,19 @@
       color: #22c55e;
     }
 
-    /* HERO RIGHT PANEL */
+    /* HERO RIGHT */
     .hero-right {
       display: flex;
       flex-direction: column;
-      gap: 1.25rem;
+      gap: 1.2rem;
     }
 
     .hero-card {
-      background: radial-gradient(circle at top left, rgba(0, 246, 255, 0.18), transparent 70%),
-                  rgba(8, 11, 31, 0.98);
-      border-radius: var(--radius-xl);
-      border: 1px solid rgba(0, 246, 255, 0.35);
+      background:
+        radial-gradient(circle at top left, rgba(0, 246, 255, 0.18), transparent 70%),
+        rgba(8, 11, 31, 0.97);
+      border-radius: 20px;
+      border: 1px solid rgba(0, 246, 255, 0.4);
       padding: 1.15rem 1.1rem;
       box-shadow: var(--shadow-soft);
       position: relative;
@@ -507,24 +511,21 @@
     }
 
     @keyframes floatCard {
-      0% {
-        transform: translateY(0px);
-      }
-      100% {
-        transform: translateY(-8px);
-      }
+      0% { transform: translateY(0px); }
+      100% { transform: translateY(-8px); }
     }
 
     .hero-card-header {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 0.8rem;
-      font-size: 0.8rem;
+      margin-bottom: 0.75rem;
+      font-size: 0.78rem;
     }
 
     .hero-card-header span {
       color: var(--text-muted);
+      font-family: "JetBrains Mono", ui-monospace;
     }
 
     .hero-headshot-row {
@@ -538,12 +539,13 @@
       position: relative;
       width: 82px;
       height: 82px;
+      flex-shrink: 0;
     }
 
     .avatar {
       width: 82px;
       height: 82px;
-      border-radius: 24px;
+      border-radius: 22px;
       object-fit: cover;
       object-position: 50% 40%;
       border: 1px solid rgba(0, 246, 255, 0.75);
@@ -556,34 +558,24 @@
       content: "";
       position: absolute;
       inset: -6px;
-      border-radius: 26px;
-      border: 1px solid rgba(0, 246, 255, 0.35);
+      border-radius: 24px;
+      border: 1px solid rgba(0, 246, 255, 0.4);
       opacity: 0.5;
       filter: blur(2px);
       animation: pulseBorder 2.4s ease-out infinite;
     }
 
     @keyframes pulseBorder {
-      0% {
-        opacity: 0.2;
-        transform: scale(1);
-      }
-      70% {
-        opacity: 0.8;
-        transform: scale(1.04);
-      }
-      100% {
-        opacity: 0;
-        transform: scale(1.08);
-      }
+      0% { opacity: 0.2; transform: scale(1); }
+      70% { opacity: 0.8; transform: scale(1.04); }
+      100% { opacity: 0; transform: scale(1.08); }
     }
 
     .hero-id-title {
-      font-size: 0.84rem;
+      font-size: 0.8rem;
       color: var(--text-muted);
-      margin-bottom: 0.25rem;
-      font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco,
-        Consolas, "Liberation Mono", "Courier New", monospace;
+      margin-bottom: 0.2rem;
+      font-family: "JetBrains Mono", ui-monospace;
     }
 
     .hero-name {
@@ -592,18 +584,18 @@
     }
 
     .hero-role {
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       color: var(--accent);
       text-transform: uppercase;
-      letter-spacing: 0.16em;
+      letter-spacing: 0.18em;
     }
 
     .hero-metadata {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 0.65rem;
+      gap: 0.6rem;
       font-size: 0.76rem;
-      margin-bottom: 0.85rem;
+      margin-bottom: 0.8rem;
     }
 
     @media (max-width: 450px) {
@@ -613,44 +605,42 @@
     }
 
     .meta-item {
-      padding: 0.5rem 0.6rem;
-      border-radius: 0.9rem;
-      background: rgba(15, 23, 42, 0.88);
-      border: 1px solid rgba(148, 163, 184, 0.32);
+      padding: 0.55rem 0.6rem;
+      border-radius: 0.8rem;
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px solid rgba(148, 163, 184, 0.42);
     }
 
     .meta-label {
       color: var(--text-muted);
       font-size: 0.7rem;
-      margin-bottom: 0.1rem;
+      margin-bottom: 0.08rem;
     }
 
     .meta-value {
-      font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco,
-        Consolas, "Liberation Mono", "Courier New", monospace;
-      font-size: 0.75rem;
+      font-family: "JetBrains Mono", ui-monospace;
+      font-size: 0.76rem;
     }
 
     .hero-tags {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.4rem;
+      gap: 0.35rem;
       font-size: 0.7rem;
       margin-bottom: 0.4rem;
     }
 
     .hero-tag {
-      padding: 0.3rem 0.6rem;
+      padding: 0.3rem 0.55rem;
       border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.45);
-      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: rgba(15, 23, 42, 0.96);
       color: var(--text-muted);
     }
 
     .hero-log {
-      font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco,
-        Consolas, "Liberation Mono", "Courier New", monospace;
-      font-size: 0.75rem;
+      font-family: "JetBrains Mono", ui-monospace;
+      font-size: 0.74rem;
       color: var(--text-muted);
       max-height: 4.2rem;
       overflow: hidden;
@@ -681,9 +671,9 @@
     .mini-card {
       padding: 0.8rem 0.9rem;
       border-radius: var(--radius-lg);
-      background: rgba(8, 11, 31, 0.95);
+      background: rgba(8, 11, 31, 0.96);
       border: 1px solid rgba(148, 163, 184, 0.4);
-      font-size: 0.77rem;
+      font-size: 0.78rem;
     }
 
     .mini-card-title {
@@ -710,9 +700,9 @@
     .hero-scroller {
       display: flex;
       align-items: center;
-      gap: 0.3rem;
+      gap: 0.35rem;
       margin-top: 0.5rem;
-      opacity: 0.7;
+      opacity: 0.75;
       font-size: 0.7rem;
     }
 
@@ -720,7 +710,7 @@
       font-size: 0.6rem;
     }
 
-    /* SECTION GENERIC */
+    /* SECTIONS */
     section {
       padding: 2.8rem 0;
     }
@@ -750,7 +740,7 @@
     }
 
     .section-sub {
-      font-size: 0.85rem;
+      font-size: 0.86rem;
       color: var(--text-muted);
       max-width: 26rem;
     }
@@ -760,7 +750,6 @@
         flex-direction: column;
         align-items: flex-start;
       }
-
       .section-sub {
         max-width: 100%;
       }
@@ -782,24 +771,25 @@
 
     .panel {
       border-radius: var(--radius-xl);
-      background: radial-gradient(circle at top left, rgba(0, 246, 255, 0.12), transparent 70%),
-                  rgba(8, 11, 31, 0.96);
-      border: 1px solid rgba(148, 163, 184, 0.4);
-      padding: 1.3rem 1.25rem 1.2rem;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.75);
+      background:
+        radial-gradient(circle at top left, rgba(0, 246, 255, 0.12), transparent 70%),
+        rgba(8, 11, 31, 0.97);
+      border: 1px solid var(--border-subtle);
+      padding: 1.25rem 1.2rem 1.2rem;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
     }
 
     .panel--soft {
       border-radius: var(--radius-lg);
-      background: rgba(8, 11, 31, 0.92);
-      border: 1px solid rgba(148, 163, 184, 0.35);
+      background: rgba(8, 11, 31, 0.96);
+      border: 1px solid rgba(148, 163, 184, 0.45);
     }
 
     .about-text {
       font-size: 0.95rem;
       color: var(--text-muted);
       line-height: 1.6;
-      margin-bottom: 1rem;
+      margin-bottom: 0.9rem;
     }
 
     .about-text strong {
@@ -845,8 +835,8 @@
     .fact-card {
       padding: 0.6rem 0.7rem;
       border-radius: 0.9rem;
-      background: rgba(15, 23, 42, 0.95);
-      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: rgba(15, 23, 42, 0.96);
+      border: 1px solid rgba(148, 163, 184, 0.45);
     }
 
     .fact-label {
@@ -856,7 +846,7 @@
     }
 
     .fact-value {
-      font-size: 0.9rem;
+      font-size: 0.88rem;
     }
 
     .skills-grid {
@@ -889,8 +879,8 @@
     .skills-tag {
       padding: 0.25rem 0.6rem;
       border-radius: 999px;
-      background: rgba(15, 23, 42, 0.9);
-      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px solid rgba(148, 163, 184, 0.45);
       color: var(--text);
     }
 
@@ -920,33 +910,37 @@
 
     .project-card {
       border-radius: var(--radius-lg);
-      background: rgba(8, 11, 31, 0.96);
-      border: 1px solid rgba(148, 163, 184, 0.35);
-      padding: 1.05rem 1rem 0.9rem;
-      box-shadow: 0 18px 38px rgba(0, 0, 0, 0.8);
+      background: rgba(8, 11, 31, 0.97);
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      padding: 1.05rem 1rem 0.95rem;
+      box-shadow: 0 18px 38px rgba(0, 0, 0, 0.85);
       display: flex;
       flex-direction: column;
-      gap: 0.6rem;
+      gap: 0.55rem;
       position: relative;
       overflow: hidden;
-      transition: transform 0.16s ease-out, box-shadow 0.16s ease-out,
-        border-color 0.16s ease-out;
+      transition:
+        transform 0.16s ease-out,
+        box-shadow 0.16s ease-out,
+        border-color 0.16s ease-out,
+        background 0.16s ease-out;
     }
 
     .project-card::after {
       content: "";
       position: absolute;
       inset: -50%;
-      background: radial-gradient(circle at top left, rgba(0, 246, 255, 0.15), transparent 60%);
+      background: radial-gradient(circle at top left, rgba(0, 246, 255, 0.16), transparent 60%);
       opacity: 0;
       transition: opacity 0.2s ease-out;
       pointer-events: none;
     }
 
     .project-card:hover {
-      transform: translateY(-4px);
+      transform: translateY(-3px);
       box-shadow: 0 24px 45px rgba(0, 0, 0, 0.9);
       border-color: rgba(0, 246, 255, 0.6);
+      background: rgba(8, 11, 31, 0.99);
     }
 
     .project-card:hover::after {
@@ -954,7 +948,7 @@
     }
 
     .project-title {
-      font-size: 0.96rem;
+      font-size: 0.98rem;
       margin: 0;
       color: #e5f5ff;
     }
@@ -967,20 +961,30 @@
     .project-body {
       font-size: 0.82rem;
       color: var(--text-muted);
-      flex: 1;
+    }
+
+    .project-list {
+      margin: 0.3rem 0 0.45rem;
+      padding-left: 1.05rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .project-list li {
+      margin-bottom: 0.18rem;
     }
 
     .project-tags {
       display: flex;
       flex-wrap: wrap;
       gap: 0.35rem;
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.35rem;
     }
 
     .project-tag {
       padding: 0.25rem 0.55rem;
       border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.4);
+      border: 1px solid rgba(148, 163, 184, 0.45);
       font-size: 0.72rem;
       text-transform: uppercase;
       letter-spacing: 0.14em;
@@ -991,27 +995,34 @@
       display: flex;
       flex-wrap: wrap;
       gap: 0.5rem;
-      margin-top: 0.15rem;
+      margin-top: 0.1rem;
     }
 
     .btn-mini {
       padding: 0.4rem 0.8rem;
       font-size: 0.75rem;
       border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.5);
-      background: rgba(15, 23, 42, 0.95);
+      border: 1px solid rgba(148, 163, 184, 0.55);
+      background: rgba(15, 23, 42, 0.96);
       color: var(--text-muted);
       display: inline-flex;
       align-items: center;
       gap: 0.4rem;
       cursor: pointer;
       text-decoration: none;
+      transition:
+        border-color 0.16s ease-out,
+        color 0.16s ease-out,
+        background 0.16s ease-out,
+        transform 0.12s ease-out;
     }
 
     .btn-mini:hover {
-      border-color: rgba(0, 246, 255, 0.65);
+      border-color: rgba(0, 246, 255, 0.7);
       color: var(--accent);
+      background: rgba(15, 23, 42, 0.99);
       text-decoration: none;
+      transform: translateY(-1px);
     }
 
     .mini-strip {
@@ -1031,12 +1042,12 @@
     .mini-strip-item {
       border-radius: 0.9rem;
       padding: 0.7rem 0.8rem;
-      background: rgba(15, 23, 42, 0.95);
-      border: 1px dashed rgba(148, 163, 184, 0.45);
+      background: rgba(15, 23, 42, 0.96);
+      border: 1px dashed rgba(148, 163, 184, 0.5);
     }
 
     .mini-strip-title {
-      font-size: 0.78rem;
+      font-size: 0.8rem;
       margin-bottom: 0.2rem;
       color: #e5f5ff;
     }
@@ -1067,11 +1078,11 @@
 
     .cert-card {
       border-radius: var(--radius-lg);
-      padding: 1.05rem 1rem 0.9rem;
-      background: rgba(8, 11, 31, 0.95);
-      border: 1px solid rgba(148, 163, 184, 0.4);
+      padding: 1.05rem 1rem 0.95rem;
+      background: rgba(8, 11, 31, 0.97);
+      border: 1px solid rgba(148, 163, 184, 0.45);
       font-size: 0.82rem;
-      box-shadow: 0 18px 38px rgba(0, 0, 0, 0.8);
+      box-shadow: 0 18px 38px rgba(0, 0, 0, 0.85);
     }
 
     .cert-head {
@@ -1100,21 +1111,21 @@
     }
 
     .badge-emerald {
-      border-color: rgba(16, 185, 129, 0.7);
+      border-color: rgba(16, 185, 129, 0.75);
       color: #4ade80;
-      background: rgba(5, 46, 22, 0.8);
+      background: rgba(5, 46, 22, 0.96);
     }
 
     .badge-slate {
       border-color: rgba(148, 163, 184, 0.7);
       color: #cbd5f5;
-      background: rgba(15, 23, 42, 0.9);
+      background: rgba(15, 23, 42, 0.98);
     }
 
     .badge-sky {
       border-color: rgba(56, 189, 248, 0.7);
       color: #38bdf8;
-      background: rgba(8, 47, 73, 0.85);
+      background: rgba(8, 47, 73, 0.94);
     }
 
     .cert-org {
@@ -1142,8 +1153,8 @@
     .course-card {
       border-radius: var(--radius-lg);
       padding: 0.9rem 0.9rem 0.8rem;
-      background: rgba(8, 11, 31, 0.96);
-      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: rgba(8, 11, 31, 0.97);
+      border: 1px solid rgba(148, 163, 184, 0.45);
       font-size: 0.8rem;
     }
 
@@ -1184,11 +1195,16 @@
       gap: 0.45rem;
       padding: 0.55rem 0.9rem;
       border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.4);
-      background: rgba(15, 23, 42, 0.95);
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      background: rgba(15, 23, 42, 0.97);
       color: var(--text-muted);
       font-size: 0.82rem;
       text-decoration: none;
+      transition:
+        border-color 0.16s ease-out,
+        color 0.16s ease-out,
+        background 0.16s ease-out,
+        transform 0.12s ease-out;
     }
 
     .contact-chip i {
@@ -1196,9 +1212,11 @@
     }
 
     .contact-chip:hover {
-      border-color: rgba(0, 246, 255, 0.6);
+      border-color: rgba(0, 246, 255, 0.7);
       color: var(--accent);
+      background: rgba(15, 23, 42, 0.99);
       text-decoration: none;
+      transform: translateY(-1px);
     }
 
     .contact-note {
@@ -1224,14 +1242,16 @@
     .form-textarea {
       width: 100%;
       border-radius: 0.8rem;
-      border: 1px solid rgba(148, 163, 184, 0.5);
-      background: rgba(8, 11, 31, 0.96);
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      background: rgba(8, 11, 31, 0.98);
       color: var(--text);
       padding: 0.55rem 0.75rem;
       font-family: inherit;
       font-size: 0.85rem;
       outline: none;
-      transition: border-color 0.15s ease-out, box-shadow 0.15s ease-out,
+      transition:
+        border-color 0.15s ease-out,
+        box-shadow 0.15s ease-out,
         background 0.15s ease-out;
     }
 
@@ -1239,7 +1259,7 @@
     .form-textarea:focus {
       border-color: rgba(0, 246, 255, 0.75);
       box-shadow: 0 0 0 1px rgba(0, 246, 255, 0.5);
-      background: rgba(15, 23, 42, 0.98);
+      background: rgba(15, 23, 42, 1);
     }
 
     .form-textarea {
@@ -1270,7 +1290,7 @@
 
     /* FOOTER */
     footer {
-      border-top: 1px solid rgba(148, 163, 184, 0.35);
+      border-top: 1px solid rgba(148, 163, 184, 0.4);
       padding: 1.1rem 0 1.3rem;
       margin-top: 0.75rem;
       background: rgba(5, 8, 22, 0.98);
@@ -1312,7 +1332,7 @@
     /* REVEAL ANIMATIONS */
     .reveal {
       opacity: 0;
-      transform: translateY(16px);
+      transform: translateY(18px);
       transition: opacity 0.5s ease-out, transform 0.5s ease-out;
     }
 
@@ -1322,7 +1342,7 @@
     }
   </style>
 
-  <!-- JSON-LD (update url if needed) -->
+  <!-- JSON-LD -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -1331,9 +1351,10 @@
     "email": "mailto:abirshuvo000@gmail.com",
     "url": "https://www.dokanbondhu.com/",
     "sameAs": [
-      "https://www.linkedin.com/in/abir-hasan-shuvo-762961308"
+      "https://www.linkedin.com/in/abir-hasan-shuvo-762961308",
+      "https://github.com/abirshuvo-glitch"
     ],
-    "jobTitle": "IT/Cybersecurity Student & Founder of DokanBondhu",
+    "jobTitle": "IT / Cybersecurity Student & Founder of DokanBondhu",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Melbourne",
@@ -1350,7 +1371,7 @@
       <div class="nav-left">
         <div class="logo-badge">
           <span class="logo-dot"></span>
-          <span>CYBER PORTFOLIO</span>
+          <span>Cyber Portfolio</span>
         </div>
         <div class="brand">&lt;abir.shuvo /&gt;</div>
       </div>
@@ -1360,11 +1381,11 @@
       </button>
 
       <nav class="nav-links" id="navLinks">
-        <button class="nav-link" data-target="#about"><span>About</span></button>
-        <button class="nav-link" data-target="#projects"><span>Projects</span></button>
-        <button class="nav-link" data-target="#certs"><span>Certs</span></button>
-        <button class="nav-link" data-target="#coursework"><span>Coursework</span></button>
-        <button class="nav-link" data-target="#contact"><span>Contact</span></button>
+        <button class="nav-link" data-target="#about">About</button>
+        <button class="nav-link" data-target="#projects">Projects</button>
+        <button class="nav-link" data-target="#certs">Certs</button>
+        <button class="nav-link" data-target="#coursework">Coursework</button>
+        <button class="nav-link" data-target="#contact">Contact</button>
         <a class="nav-cta" href="assets/Abir-Hasan-Shuvo-CV.pdf" target="_blank" rel="noopener">
           <i class="fa-solid fa-file-arrow-down"></i>
           <span>Download&nbsp;CV</span>
@@ -1382,11 +1403,11 @@
           <div class="chip-row">
             <div class="chip chip--online">
               <span class="chip-dot"></span>
-              <span>Available for roles</span>
+              <span>Actively looking — internships &amp; part-time</span>
             </div>
             <div class="chip">
               <i class="fa-solid fa-shield-halved"></i>
-              <span>Cybersecurity &amp; Networks</span>
+              <span>Cybersecurity · Networking</span>
             </div>
             <div class="chip">
               <i class="fa-solid fa-location-dot"></i>
@@ -1396,22 +1417,21 @@
 
           <h1 class="hero-title">
             Hi, I’m <span>Abir Hasan Shuvo</span><br />
-            Cybersecurity-driven IT student &amp; founder.
+            Cybersecurity-focused student &amp; early-stage founder.
           </h1>
 
           <p class="hero-sub">
-            I’m a second-year <strong>IT / Cybersecurity student in Melbourne</strong>,
+            I’m a <strong>second-year IT / Cybersecurity student in Melbourne</strong>,
             building <strong>DokanBondhu</strong> — a smart due &amp; sales platform for
-            Bangladeshi grocery shops — while pushing deeper into
-            <strong>networking, SOC fundamentals</strong>, and
-            <strong>secure systems</strong>. I care about clean documentation, calm
-            incident response, and shipping tools that real people actually use.
+            Bangladeshi grocery shops — and working through
+            <strong>networking, SOC fundamentals, and secure systems</strong>. I like
+            systems that don’t fall apart when people are tired, stressed, or on bad devices.
           </p>
 
           <div class="hero-cta-row">
             <a class="btn btn-primary" href="#projects">
               <i class="fa-solid fa-code"></i>
-              <span>View Projects</span>
+              <span>View projects</span>
             </a>
             <a class="btn btn-ghost" href="https://www.dokanbondhu.com" target="_blank" rel="noopener">
               <i class="fa-solid fa-store"></i>
@@ -1434,7 +1454,7 @@
             </div>
             <div class="status-card">
               <div class="status-label">Open to</div>
-              <div class="status-value status-chip-ok">Part-time · Internship</div>
+              <div class="status-value status-chip-ok">Intern / junior IT support</div>
             </div>
           </div>
         </div>
@@ -1443,10 +1463,8 @@
         <div class="hero-right reveal">
           <div class="hero-card">
             <div class="hero-card-header">
-              <span>PERSONA / analyst_profile.json</span>
-              <span style="font-family: 'JetBrains Mono', ui-monospace; font-size: 0.7rem; color: var(--accent);">
-                status: &lt;learning_mode /&gt;
-              </span>
+              <span>persona / analyst_profile.json</span>
+              <span>status: &lt;learning_mode /&gt;</span>
             </div>
 
             <div class="hero-headshot-row">
@@ -1458,16 +1476,16 @@
                 />
               </div>
               <div>
-                <div class="hero-id-title">ID: STU-CYB-VIC</div>
+                <div class="hero-id-title">ID: STU-CYB-MEL</div>
                 <div class="hero-name">Abir Hasan Shuvo</div>
-                <div class="hero-role">Cybersecurity &amp; IT Student · Founder</div>
+                <div class="hero-role">Cybersecurity &amp; IT student · Founder</div>
               </div>
             </div>
 
             <div class="hero-metadata">
               <div class="meta-item">
                 <div class="meta-label">Path</div>
-                <div class="meta-value">Junior SOC · Analyst</div>
+                <div class="meta-value">Junior SOC / Analyst</div>
               </div>
               <div class="meta-item">
                 <div class="meta-label">Stack</div>
@@ -1478,22 +1496,22 @@
                 <div class="meta-value">DokanBondhu</div>
               </div>
               <div class="meta-item">
-                <div class="meta-label">Signal</div>
+                <div class="meta-label">Themes</div>
                 <div class="meta-value">Risk · IR · BCP</div>
               </div>
             </div>
 
             <div class="hero-tags">
               <span class="hero-tag">DokanBondhu — fintech / retail-tech</span>
-              <span class="hero-tag">OWASP · Linux hardening</span>
+              <span class="hero-tag">OWASP labs · Linux</span>
               <span class="hero-tag">Networking (CCNA track)</span>
-              <span class="hero-tag">Incident &amp; risk documentation</span>
+              <span class="hero-tag">Incident &amp; risk docs</span>
             </div>
 
             <div class="hero-log">
               <div class="hero-log-line">[INFO] Loading <span>student_profile</span> … OK</div>
-              <div class="hero-log-line">[INFO] Startup: <span>DokanBondhu — smart ledger for Bangladeshi “mudi dokan”</span></div>
-              <div class="hero-log-line">[READY] Accepting: <span>internships · part-time IT support · junior analyst</span></div>
+              <div class="hero-log-line">[INFO] Startup: <span>DokanBondhu — smart ledger for “mudi dokan”</span></div>
+              <div class="hero-log-line">[READY] Accepting: <span>internships · part-time IT · junior analyst</span></div>
             </div>
           </div>
 
@@ -1501,9 +1519,9 @@
             <div class="mini-card">
               <div class="mini-card-title">Operating Context</div>
               <div class="mini-chip-row">
-                <div class="mini-chip">Student · 2nd year</div>
-                <div class="mini-chip">Cyber &amp; networking units</div>
+                <div class="mini-chip">2nd year student</div>
                 <div class="mini-chip">Hands-on labs</div>
+                <div class="mini-chip">Real users via startups</div>
               </div>
               <div class="hero-scroller">
                 <i class="fa-solid fa-arrow-down-long"></i>
@@ -1514,7 +1532,7 @@
               <div class="mini-card-title">Security Themes</div>
               <div class="mini-chip-row">
                 <div class="mini-chip">Threats &amp; CIA triad</div>
-                <div class="mini-chip">IR playbooks</div>
+                <div class="mini-chip">IR checklists</div>
                 <div class="mini-chip">BCP · RTO</div>
                 <div class="mini-chip">SIEM &amp; logs</div>
               </div>
@@ -1530,37 +1548,34 @@
         <div class="section-header reveal">
           <div>
             <div class="section-label">01 — About</div>
-            <h2 class="section-title">Who I am and how I think about security</h2>
+            <h2 class="section-title">Who I am and how I approach security</h2>
           </div>
           <p class="section-sub">
-            Security + startups. I care about building systems people actually use,
-            not just theory — from shopkeeper apps in Bangladesh to clean incident
-            workflows in the SOC.
+            Security plus startups. I care about systems that work when people are tired,
+            stressed, and on cheap hardware.
           </p>
         </div>
 
         <div class="about-grid">
-          <!-- ABOUT TEXT -->
+          <!-- ABOUT -->
           <div class="panel reveal">
             <p class="about-text">
-              I’m a <strong>second-year Cybersecurity student</strong> with a background in
-              Python, SQL, HTML/CSS, networking, and security fundamentals
-              (OWASP, MFA, zero-trust thinking). I like taking messy, ambiguous situations
-              and turning them into <strong>clear, documented workflows</strong> that a
-              stressed team can follow at 2&nbsp;AM.
+              I’m a <strong>Cybersecurity-focused IT student</strong> with a foundation in
+              Python, SQL, HTML/CSS, and networking. Most of my work is around
+              <strong>understanding threats, documenting risk, and designing flows</strong>
+              that a real team can follow at 2&nbsp;AM without guessing.
             </p>
             <p class="about-text">
               I’m also the founder of <strong>DokanBondhu</strong>, a smart ledger &amp;
-              sales platform for Bangladeshi grocery shopkeepers. That project forces me
-              to think about <strong>real users, real constraints, and real risk</strong>:
-              bad devices, bad connectivity, shared phones, and a lot of human factors.
+              sales platform for Bangladeshi <strong>“mudi dokan”</strong>. That forces me
+              to think about reality: low-end phones, shared devices, slow networks, and
+              users who don’t care about “cyber” — they just want their money tracked.
             </p>
             <p class="about-text">
-              Right now I’m pushing deeper into
-              <strong>OWASP Top 10</strong>,
-              <strong>Linux hardening</strong>, and
-              <strong>cloud basics</strong>, while building work that looks like what a
-              <strong>junior SOC analyst or security engineer</strong> actually does.
+              Right now I’m doubling down on <strong>CCNA networking labs</strong>,
+              <strong>OWASP Top 10</strong>, and <strong>BCP / incident response</strong>,
+              while building projects that look like actual work for a junior
+              SOC analyst or security engineer.
             </p>
 
             <div class="about-pills">
@@ -1570,7 +1585,7 @@
               </div>
               <div class="about-pill">
                 <i class="fa-solid fa-database"></i>
-                <span>SQL · ERDs · normalisation</span>
+                <span>SQL · ERD · normalisation</span>
               </div>
               <div class="about-pill">
                 <i class="fa-solid fa-user-shield"></i>
@@ -1578,7 +1593,7 @@
               </div>
               <div class="about-pill">
                 <i class="fa-solid fa-file-pen"></i>
-                <span>Incident &amp; risk documentation</span>
+                <span>Incident &amp; risk docs</span>
               </div>
             </div>
 
@@ -1588,12 +1603,12 @@
                 <div class="fact-value">Melbourne, Australia</div>
               </div>
               <div class="fact-card">
-                <div class="fact-label">Open to</div>
-                <div class="fact-value">Internships &amp; part-time roles</div>
+                <div class="fact-label">Looking for</div>
+                <div class="fact-value">Security-flavoured IT roles</div>
               </div>
               <div class="fact-card">
-                <div class="fact-label">Energy goes into</div>
-                <div class="fact-value">Startups · labs · clean notes</div>
+                <div class="fact-label">Most energy goes into</div>
+                <div class="fact-value">Startups · labs · clear notes</div>
               </div>
             </div>
           </div>
@@ -1631,7 +1646,7 @@
               <div>
                 <div class="skills-group-title">Ways of working</div>
                 <div class="skills-tags">
-                  <div class="skills-tag"><span>Clean docs</span></div>
+                  <div class="skills-tag"><span>Clean documentation</span></div>
                   <div class="skills-tag"><span>User-centred UX</span></div>
                   <div class="skills-tag"><span>Checklists</span></div>
                   <div class="skills-tag"><span>Calm under pressure</span></div>
@@ -1649,11 +1664,11 @@
         <div class="section-header reveal">
           <div>
             <div class="section-label">02 — Projects</div>
-            <h2 class="section-title">Startup work &amp; security-flavoured projects</h2>
+            <h2 class="section-title">Startup work &amp; security-flavoured builds</h2>
           </div>
           <p class="section-sub">
-            Real users, real systems, real constraints. From shopkeepers in Bangladesh
-            to mock SOC dashboards and risk reports.
+            Work that mixes real users, security thinking, and clear documentation —
+            not just lab screenshots.
           </p>
         </div>
 
@@ -1665,11 +1680,15 @@
               <h3 class="project-title">DokanBondhu — Smart Ledger for Bangladeshi Shops</h3>
             </header>
             <div class="project-body">
-              Building <strong>DokanBondhu</strong>, a smart ledger &amp; sales web app for
-              Bangladeshi <strong>“mudi dokan”</strong> (small grocery shops).
-              Offline-friendly, Bengali-first UI, due tracking, and cleaner records than
-              paper notebooks — designed to be used on cheap Android phones.
+              Smart due &amp; sales web app designed for Bangladeshi
+              <strong>“mudi dokan”</strong> — replacing paper notebooks with something
+              shopkeepers can actually use on cheap Android phones.
             </div>
+            <ul class="project-list">
+              <li>Bangla-first UI tuned for shopkeepers, not tech people.</li>
+              <li>Designed around low-end devices and unstable connections.</li>
+              <li>Security thinking from day one: account separation, safer authentication, and clean audit of dues.</li>
+            </ul>
             <div class="project-tags">
               <span class="project-tag">Product thinking</span>
               <span class="project-tag">Security by design</span>
@@ -1682,7 +1701,7 @@
               </a>
               <a class="btn-mini" href="https://github.com/abirshuvo-glitch" target="_blank" rel="noopener">
                 <i class="fa-brands fa-github"></i>
-                <span>Code &amp; experiments</span>
+                <span>Related code</span>
               </a>
             </div>
           </article>
@@ -1691,24 +1710,27 @@
           <article class="project-card reveal">
             <header>
               <p class="project-subtitle">Full-stack • School community</p>
-              <h3 class="project-title">School Alumni Association Portal</h3>
+              <h3 class="project-title">PZS Alumni Association Portal</h3>
             </header>
             <div class="project-body">
-              Designed and built a portfolio-style portal for a
-              <strong>school alumni association</strong>, with clean information
-              architecture, responsive layout, and emphasis on trust, clarity, and
-              ease-of-use for non-technical visitors.
+              Responsive alumni portal for a school community, built to feel
+              trustworthy and simple enough for teachers and alumni who don’t live
+              inside tech.
             </div>
+            <ul class="project-list">
+              <li>Clear information architecture: events, announcements, contact.</li>
+              <li>Responsive layout tested across mobile, tablet, and desktop.</li>
+              <li>Security basics baked in: obvious CTAs, careful external links, and low-friction navigation.</li>
+            </ul>
             <div class="project-tags">
               <span class="project-tag">Responsive UI</span>
               <span class="project-tag">Community</span>
-              <span class="project-tag">Security basics</span>
+              <span class="project-tag">Trust &amp; clarity</span>
             </div>
             <div class="project-actions">
-              <!-- Replace # with actual URL if you host it somewhere -->
-              <a class="btn-mini" href="#" target="_blank" rel="noopener">
+              <a class="btn-mini" href="https://pzs-alumni-ui.vercel.app/" target="_blank" rel="noopener">
                 <i class="fa-solid fa-globe"></i>
-                <span>View live (coming soon)</span>
+                <span>View live</span>
               </a>
             </div>
           </article>
@@ -1720,11 +1742,15 @@
               <h3 class="project-title">Zenith Logistics — Cybersecurity Audit</h3>
             </header>
             <div class="project-body">
-              Applied the <strong>OCTAVE risk framework</strong> to a logistics provider:
-              identified key assets, prioritised risks, and mapped controls across
-              <strong>Prevent / Detect / Correct</strong>, with clear,
-              non-technical explanations for stakeholders.
+              Classroom-style audit using the <strong>OCTAVE risk framework</strong>:
+              identifying critical assets, ranking risks, and mapping controls in a way
+              non-technical stakeholders can still follow.
             </div>
+            <ul class="project-list">
+              <li>Organised findings around the CIA triad and business impact.</li>
+              <li>Separated recommendations into Prevent / Detect / Correct.</li>
+              <li>Documented in simple language with clear next steps.</li>
+            </ul>
             <div class="project-tags">
               <span class="project-tag">OCTAVE</span>
               <span class="project-tag">Risk &amp; controls</span>
@@ -1744,22 +1770,22 @@
           <div class="mini-strip-item reveal">
             <div class="mini-strip-title">Incident Form &amp; Dashboard UX</div>
             <div class="mini-strip-text">
-              UX flows and mock dashboards for incident reporting in high-stress
-              environments — severity tags, queues, and layouts tuned for SOC teams.
+              UX flows and mock dashboards for incident reporting — severity tags,
+              queues, and layouts designed so a tired SOC analyst can still do the right thing.
             </div>
           </div>
           <div class="mini-strip-item reveal">
             <div class="mini-strip-title">Net Scanner CLI</div>
             <div class="mini-strip-text">
-              Python tool to ping a subnet and list live hosts — practice for discovery
-              and understanding how basic recon tools work under the hood.
+              Python CLI to ping a subnet and list live hosts. Used as a way to
+              understand basic discovery, error handling, and logging patterns.
             </div>
           </div>
           <div class="mini-strip-item reveal">
             <div class="mini-strip-title">SQLi Practice Lab</div>
             <div class="mini-strip-text">
-              Deliberately vulnerable mini app to practise preventing SQL injection
-              using parameterised queries and input validation.
+              Deliberately simple lab focusing on preventing SQL injection using
+              parameterised queries, input validation, and better error messages.
             </div>
           </div>
         </div>
@@ -1775,13 +1801,12 @@
             <h2 class="section-title">Signals that I’m serious about the craft</h2>
           </div>
           <p class="section-sub">
-            Building a path aligned with entry-level security roles: fundamentals first,
-            then SOC, logging, and real-world operations.
+            Core networking and security fundamentals now, SOC and deeper operations next.
           </p>
         </div>
 
         <div class="cards-grid">
-          <!-- CCNA Intro to Cybersecurity -->
+          <!-- CCNA Intro -->
           <article class="cert-card reveal">
             <div class="cert-head">
               <div class="cert-title">CCNA: Introduction to Cybersecurity</div>
@@ -1792,8 +1817,8 @@
             </div>
             <div class="cert-org">Cisco Networking Academy</div>
             <ul class="cert-list">
-              <li>Threats, vulnerabilities, CIA triad, and basic controls.</li>
-              <li>Ethics, careers, and safe online behaviour.</li>
+              <li>Threats, vulnerabilities, CIA triad, and core controls.</li>
+              <li>Ethics, careers, and safer online behaviour.</li>
             </ul>
             <div class="cert-actions">
               <a class="btn-mini" href="assets/netacad-intro-to-cybersecurity.pdf" target="_blank" rel="noopener">
@@ -1803,7 +1828,7 @@
             </div>
           </article>
 
-          <!-- CCNA Networking Basics (in progress) -->
+          <!-- CCNA Networking Basics -->
           <article class="cert-card reveal">
             <div class="cert-head">
               <div class="cert-title">CCNA: Networking Basics</div>
@@ -1815,31 +1840,31 @@
             <div class="cert-org">Cisco Networking Academy</div>
             <ul class="cert-list">
               <li>Subnetting, routing &amp; switching fundamentals.</li>
-              <li>Labs with addressing and packet capture (Wireshark).</li>
+              <li>Hands-on labs with addressing and packet capture (Wireshark).</li>
             </ul>
             <div class="cert-actions">
-              <span class="btn-mini" style="opacity: 0.6; cursor: default;">
+              <span class="btn-mini" style="opacity: 0.65; cursor: default;">
                 <i class="fa-solid fa-award"></i>
                 <span>Verification after completion</span>
               </span>
             </div>
           </article>
 
-          <!-- Junior Cybersecurity Analyst Path -->
+          <!-- Junior Analyst Path -->
           <article class="cert-card reveal">
             <div class="cert-head">
-              <div class="cert-title">Junior Cybersecurity Analyst — Career Path</div>
+              <div class="cert-title">Junior Cybersecurity Analyst — Learning Path</div>
               <span class="badge badge-sky">
                 <i class="fa-regular fa-clock"></i>
                 <span>In progress</span>
               </span>
             </div>
-            <div class="cert-org">Focus: SOC fundamentals &amp; early-career ops</div>
+            <div class="cert-org">Focus: SOC fundamentals &amp; operations</div>
             <ul class="cert-list">
-              <li>SIEM &amp; log triage (Windows Event Logs, Splunk style).</li>
-              <li>Alert handling: phishing, malware, brute-force scenarios.</li>
-              <li>Vuln management, CVSS, patch vs compensating controls.</li>
-              <li>Python snippets for parsing and log enrichment.</li>
+              <li>SIEM &amp; log triage (Windows Event Logs, Splunk-style workflows).</li>
+              <li>Alert handling: phishing, malware, brute-force style scenarios.</li>
+              <li>Vuln management, CVSS basics, patch vs compensating controls.</li>
+              <li>Python snippets for parsing and enriching logs.</li>
             </ul>
           </article>
         </div>
@@ -1855,8 +1880,7 @@
             <h2 class="section-title">Where uni theory turns into evidence</h2>
           </div>
           <p class="section-sub">
-            Selected assessment work: breach analysis, risk appetite, BCP and
-            communication — written so non-technical people can still follow.
+            Selected assessment work that shows how I write and reason about risk, BCP, and security decisions.
           </p>
         </div>
 
@@ -1864,7 +1888,7 @@
           <article class="course-card reveal">
             <h3 class="course-title">CLA #1 — Data Breaches</h3>
             <p class="course-meta">
-              CIA triad analysis and Australian breach case studies.
+              CIA triad analysis and Australian breach case studies, written for non-technical readers.
             </p>
             <a class="btn-mini" href="assets/Abir-CLA1.pdf" target="_blank" rel="noopener">
               <i class="fa-solid fa-file-lines"></i>
@@ -1875,7 +1899,7 @@
           <article class="course-card reveal">
             <h3 class="course-title">CLA #2 — Risk Appetite &amp; Missions</h3>
             <p class="course-meta">
-              Comparing RBA’s risk appetite with university and enterprise missions.
+              Comparing RBA risk appetite with university and enterprise missions — why organisations accept certain risks.
             </p>
             <a class="btn-mini" href="assets/Abir-CLA2.pdf" target="_blank" rel="noopener">
               <i class="fa-solid fa-file-lines"></i>
@@ -1884,9 +1908,9 @@
           </article>
 
           <article class="course-card reveal">
-            <h3 class="course-title">CLA #3 — BCP, RTO &amp; Comms</h3>
+            <h3 class="course-title">CLA #3 — BCP, RTO &amp; Communication</h3>
             <p class="course-meta">
-              LogiFlow ransomware scenarios; IRACI roles and continuity planning.
+              LogiFlow ransomware scenarios; IRACI roles, BCP thinking, and how to keep the business moving.
             </p>
             <a class="btn-mini" href="assets/Abir-CLA3.pdf" target="_blank" rel="noopener">
               <i class="fa-solid fa-file-lines"></i>
@@ -1906,8 +1930,7 @@
             <h2 class="section-title">Let’s talk security, systems, or DokanBondhu</h2>
           </div>
           <p class="section-sub">
-            Best way to reach me is email or LinkedIn. I’m open to cyber-adjacent IT
-            roles that give me exposure to production systems, users, and real incidents.
+            Email or LinkedIn is best. I’m looking for cyber-adjacent IT roles with real systems, real users, and real incidents.
           </p>
         </div>
 
@@ -1948,9 +1971,8 @@
               </a>
             </div>
             <p class="contact-note">
-              I usually respond within <strong>24–48 hours (AEST)</strong>. If you can,
-              include a quick summary of your team, tech stack, and how a student or
-              founder could be useful.
+              If you’re reaching out about a role, a quick summary of your team, tech stack,
+              and how you see a student or founder helping is perfect.
             </p>
           </div>
 
@@ -2013,7 +2035,7 @@
       <div class="footer-links">
         <a href="#top">Back to top</a>
         <a href="assets/Abir-Hasan-Shuvo-CV.pdf" target="_blank" rel="noopener">CV</a>
-        <span>Designed as a security-themed founder portfolio.</span>
+        <span>Security-themed portfolio for student &amp; founder roles.</span>
       </div>
     </div>
   </footer>
@@ -2047,7 +2069,7 @@
       });
     });
 
-    // IntersectionObserver for reveal animations
+    // Reveal animations
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
