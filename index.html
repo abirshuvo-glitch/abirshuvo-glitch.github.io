@@ -1,41 +1,1252 @@
 <!doctype html>
-<html lang="en" data-bs-theme="light">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Abir Hasan Shuvo — Portfolio</title>
-  <meta name="description" content="Portfolio of Abir Hasan Shuvo — IT/Cybersecurity student in Melbourne (Networking, Web Security, UX for security). Projects, resume, and contact." />
+  <title>Abir Hasan Shuvo — Cybersecurity Portfolio</title>
+  <meta name="description" content="Abir Hasan Shuvo — Cybersecurity & IT student in Melbourne. SOC, networking, risk, and secure systems. Projects, certifications, and contact." />
 
-  <!-- SEO basics -->
-  <meta property="og:title" content="Abir Hasan Shuvo — Portfolio" />
-  <meta property="og:description" content="IT/Cybersecurity student in Melbourne. Security, networking, UX for incident response. Projects & contact." />
+  <!-- Open Graph -->
+  <meta property="og:title" content="Abir Hasan Shuvo — Cybersecurity Portfolio" />
+  <meta property="og:description" content="Cybersecurity-focused IT student in Melbourne. SOC, risk, networking, and secure web." />
   <meta property="og:type" content="website" />
 
-  <!-- Bootstrap 5 CDN -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- Icons (Font Awesome) -->
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+
+  <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <style>
-    html { scroll-behavior: smooth; }
-    body { min-height: 100vh; }
-    .nav-link { font-weight: 500; }
-    .hero { background: linear-gradient(135deg, rgba(13,110,253,.10), rgba(32,201,151,.10)); border-bottom: 1px solid rgba(0,0,0,.06); }
-    .avatar { width: 128px; height: 128px; border-radius: 999px; object-fit: cover; object-position: 50% 40%; box-shadow: 0 10px 30px rgba(0,0,0,.10); }
-    .gradient-text { background: linear-gradient(90deg, #0d6efd, #20c997); -webkit-background-clip: text; background-clip: text; color: transparent; }
-    .project-badges .badge { margin-right: .35rem; margin-bottom: .35rem; }
-    .sticky-top-blur{ backdrop-filter: saturate(180%) blur(8px); background-color: rgba(255,255,255,.65); }
-    [data-bs-theme="dark"] .sticky-top-blur{ background-color: rgba(20,20,20,.55); }
-    .shadow-soft{ box-shadow: 0 10px 30px rgba(0,0,0,.06); }
-    .pill{ border-radius: 999px; }
-    .kudos i{ opacity:.85 }
-    .contact-chip { display:inline-flex; align-items:center; gap:.5rem; padding:.625rem .9rem; border:1px solid var(--bs-border-color); border-radius:999px; text-decoration:none; }
-    .contact-chip:hover { background: var(--bs-body-bg); box-shadow: 0 8px 18px rgba(0,0,0,.06); }
-    .section-hint{ color: var(--bs-secondary-color); font-size: .9rem; }
+    :root {
+      --bg: #050816;
+      --bg-alt: #050816;
+      --panel: #080b1f;
+      --panel-alt: #0b1027;
+      --accent: #00f6ff;
+      --accent-soft: rgba(0, 246, 255, 0.15);
+      --accent-strong: rgba(0, 246, 255, 0.28);
+      --accent-warn: #ffda6a;
+      --text: #e5f5ff;
+      --text-muted: #8b97b4;
+      --border-subtle: rgba(255, 255, 255, 0.06);
+      --shadow-soft: 0 24px 60px rgba(0, 0, 0, 0.8);
+      --radius-xl: 24px;
+      --radius-lg: 18px;
+      --radius-pill: 999px;
+      --nav-height: 72px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--text);
+      font-family: "Space Grotesk", system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #151c3a 0, #050816 45%, #02030a 90%);
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Cyber grid background overlay */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(0, 246, 255, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 246, 255, 0.08) 1px, transparent 1px);
+      background-size: 80px 80px, 80px 80px;
+      opacity: 0.12;
+      mix-blend-mode: screen;
+      z-index: -2;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: -40%;
+      background:
+        radial-gradient(circle at 10% 10%, rgba(0, 246, 255, 0.16), transparent 55%),
+        radial-gradient(circle at 80% 80%, rgba(168, 85, 247, 0.22), transparent 60%);
+      opacity: 0.6;
+      filter: blur(12px);
+      z-index: -3;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    main {
+      width: 100%;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+
+    /* NAVBAR */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      height: var(--nav-height);
+      backdrop-filter: blur(18px);
+      background: radial-gradient(circle at top, rgba(0, 246, 255, 0.16), transparent 60%),
+                  rgba(5, 8, 22, 0.92);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 100%;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .logo-badge {
+      padding: 0.35rem 0.7rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(0, 246, 255, 0.35);
+      background: radial-gradient(circle at top left, rgba(0, 246, 255, 0.25), transparent 70%);
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco,
+        Consolas, "Liberation Mono", "Courier New", monospace;
+    }
+
+    .logo-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 10px var(--accent);
+    }
+
+    .brand {
+      font-weight: 600;
+      font-size: 1rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text);
+      font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco,
+        Consolas, "Liberation Mono", "Courier New", monospace;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      font-size: 0.88rem;
+    }
+
+    .nav-link {
+      position: relative;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-weight: 500;
+      color: var(--text-muted);
+      cursor: pointer;
+    }
+
+    .nav-link span {
+      opacity: 0.9;
+    }
+
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -0.3rem;
+      width: 0%;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent), #a855f7);
+      border-radius: 999px;
+      transition: width 0.18s ease-out;
+    }
+
+    .nav-link:hover {
+      color: var(--text);
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 0.95rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(0, 246, 255, 0.4);
+      background: radial-gradient(circle at top left, rgba(0, 246, 255, 0.24), transparent 65%), rgba(5, 8, 22, 0.8);
+      color: var(--text);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 0 0 1px rgba(0, 246, 255, 0.1);
+    }
+
+    .nav-cta i {
+      font-size: 0.85rem;
+    }
+
+    .nav-toggle {
+      display: none;
+      font-size: 1.1rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      padding: 0.35rem 0.6rem;
+      background: rgba(5, 8, 22, 0.85);
+      color: var(--text);
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+
+      .nav-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .nav--open .nav-links {
+        position: absolute;
+        inset: var(--nav-height) 0 auto 0;
+        padding: 1rem 1.25rem 1.25rem;
+        background: rgba(5, 8, 22, 0.98);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+        backdrop-filter: blur(18px);
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        display: flex;
+      }
+
+      .nav--open .nav-cta {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+
+    /* HERO */
+    .hero {
+      padding: 3.5rem 0 3rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.6fr) minmax(0, 1.1fr);
+      gap: 2.75rem;
+      align-items: center;
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        padding-top: 2.75rem;
+      }
+
+      .hero-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .chip {
+      border-radius: var(--radius-pill);
+      padding: 0.3rem 0.85rem;
+      font-size: 0.74rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      color: var(--text-muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      background: rgba(8, 11, 31, 0.9);
+      backdrop-filter: blur(16px);
+    }
+
+    .chip-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 10px var(--accent);
+    }
+
+    .chip--online {
+      border-color: rgba(0, 246, 255, 0.45);
+      color: var(--accent);
+      background: rgba(0, 246, 255, 0.08);
+    }
+
+    .hero-title {
+      font-size: clamp(2.35rem, 4vw, 3.1rem);
+      line-height: 1.1;
+      margin: 0 0 0.5rem;
+      letter-spacing: 0.02em;
+    }
+
+    .hero-title span {
+      background: linear-gradient(120deg, #00f6ff, #38bdf8, #a855f7);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-sub {
+      font-size: 1rem;
+      color: var(--text-muted);
+      max-width: 38rem;
+      margin-bottom: 1.65rem;
+    }
+
+    .hero-sub strong {
+      color: #e5f5ff;
+      font-weight: 600;
+    }
+
+    .hero-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-bottom: 1.6rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.55rem;
+      padding: 0.7rem 1.2rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid transparent;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform 0.14s ease-out, box-shadow 0.14s ease-out,
+        background 0.14s ease-out, border-color 0.14s ease-out, color 0.14s ease-out;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), #38bdf8);
+      color: #020617;
+      box-shadow: 0 18px 45px rgba(0, 246, 255, 0.35);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 22px 55px rgba(0, 246, 255, 0.52);
+      text-decoration: none;
+    }
+
+    .btn-ghost {
+      background: transparent;
+      border-color: rgba(255, 255, 255, 0.22);
+      color: var(--text);
+    }
+
+    .btn-ghost:hover {
+      background: rgba(15, 23, 42, 0.9);
+      border-color: rgba(0, 246, 255, 0.5);
+      box-shadow: 0 12px 32px rgba(15, 23, 42, 0.9);
+      text-decoration: none;
+    }
+
+    .btn-soft {
+      background: rgba(15, 23, 42, 0.7);
+      border-color: rgba(148, 163, 184, 0.5);
+      color: var(--text-muted);
+    }
+
+    .btn-soft:hover {
+      background: rgba(15, 23, 42, 0.9);
+      border-color: rgba(0, 246, 255, 0.45);
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .hero-status-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.75rem;
+      max-width: 32rem;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+    }
+
+    @media (max-width: 600px) {
+      .hero-status-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    .status-card {
+      padding: 0.6rem 0.75rem;
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(148, 163, 184, 0.3);
+      background: radial-gradient(circle at top left, rgba(0, 246, 255, 0.18), transparent 65%),
+                  rgba(15, 23, 42, 0.85);
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+
+    .status-label {
+      font-size: 0.68rem;
+      color: var(--text-muted);
+    }
+
+    .status-value {
+      font-size: 0.8rem;
+      color: var(--accent);
+      white-space: nowrap;
+    }
+
+    .status-chip-ok {
+      color: #22c55e;
+    }
+
+    .status-chip-warn {
+      color: var(--accent-warn);
+    }
+
+    /* HERO RIGHT PANEL */
+    .hero-right {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .hero-card {
+      background: radial-gradient(circle at top left, rgba(0, 246, 255, 0.18), transparent 70%),
+                  rgba(8, 11, 31, 0.98);
+      border-radius: var(--radius-xl);
+      border: 1px solid rgba(0, 246, 255, 0.35);
+      padding: 1.15rem 1.1rem;
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::after {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      border-radius: inherit;
+      border: 1px solid transparent;
+      background: conic-gradient(
+        from 220deg,
+        rgba(0, 246, 255, 0.2),
+        transparent 25%,
+        rgba(88, 28, 135, 0.45),
+        transparent 75%,
+        rgba(0, 246, 255, 0.2)
+      );
+      opacity: 0.5;
+      mix-blend-mode: screen;
+      filter: blur(12px);
+      z-index: -1;
+    }
+
+    .hero-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.8rem;
+      font-size: 0.8rem;
+    }
+
+    .hero-card-header span {
+      color: var(--text-muted);
+    }
+
+    .hero-headshot-row {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .avatar {
+      width: 82px;
+      height: 82px;
+      border-radius: 24px;
+      object-fit: cover;
+      object-position: 50% 40%;
+      border: 1px solid rgba(0, 246, 255, 0.75);
+      box-shadow: 0 14px 40px rgba(0, 246, 255, 0.5);
+    }
+
+    .hero-id-title {
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      margin-bottom: 0.25rem;
+      font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco,
+        Consolas, "Liberation Mono", "Courier New", monospace;
+    }
+
+    .hero-name {
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    .hero-role {
+      font-size: 0.8rem;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+    }
+
+    .hero-metadata {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.65rem;
+      font-size: 0.76rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .meta-item {
+      padding: 0.5rem 0.6rem;
+      border-radius: 0.9rem;
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid rgba(148, 163, 184, 0.32);
+    }
+
+    .meta-label {
+      color: var(--text-muted);
+      font-size: 0.7rem;
+      margin-bottom: 0.1rem;
+    }
+
+    .meta-value {
+      font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco,
+        Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 0.75rem;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      font-size: 0.7rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .hero-tag {
+      padding: 0.3rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      background: rgba(15, 23, 42, 0.9);
+      color: var(--text-muted);
+    }
+
+    .hero-log {
+      font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco,
+        Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      max-height: 4.2rem;
+      overflow: hidden;
+    }
+
+    .hero-log-line {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .hero-log-line span {
+      color: var(--accent);
+    }
+
+    .hero-mini-panel {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.4fr);
+      gap: 0.85rem;
+    }
+
+    @media (max-width: 900px) {
+      .hero-mini-panel {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .mini-card {
+      padding: 0.8rem 0.9rem;
+      border-radius: var(--radius-lg);
+      background: rgba(8, 11, 31, 0.95);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      font-size: 0.77rem;
+    }
+
+    .mini-card-title {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-muted);
+      margin-bottom: 0.3rem;
+    }
+
+    .mini-chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .mini-chip {
+      padding: 0.25rem 0.55rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      color: var(--text-muted);
+    }
+
+    .hero-scroller {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      margin-top: 0.4rem;
+      opacity: 0.7;
+      font-size: 0.7rem;
+    }
+
+    .hero-scroller i {
+      font-size: 0.6rem;
+    }
+
+    /* SECTION GENERIC */
+    section {
+      padding: 2.6rem 0;
+    }
+
+    .section-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      color: var(--accent-soft);
+      margin-bottom: 0.35rem;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1.85rem;
+    }
+
+    .section-title {
+      font-size: 1.35rem;
+      letter-spacing: 0.02em;
+    }
+
+    .section-sub {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    @media (max-width: 768px) {
+      .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    /* ABOUT + SKILLS */
+    .about-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.3fr);
+      gap: 1.75rem;
+      align-items: flex-start;
+    }
+
+    @media (max-width: 900px) {
+      .about-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .panel {
+      border-radius: var(--radius-xl);
+      background: radial-gradient(circle at top left, rgba(0, 246, 255, 0.12), transparent 70%),
+                  rgba(8, 11, 31, 0.96);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      padding: 1.3rem 1.25rem 1.2rem;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.75);
+    }
+
+    .panel--soft {
+      border-radius: var(--radius-lg);
+      background: rgba(8, 11, 31, 0.92);
+      border: 1px solid rgba(148, 163, 184, 0.35);
+    }
+
+    .about-text {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .about-text strong {
+      color: var(--text);
+    }
+
+    .about-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      font-size: 0.74rem;
+    }
+
+    .about-pill {
+      padding: 0.35rem 0.65rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      color: var(--text-muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .about-pill i {
+      font-size: 0.8rem;
+      color: var(--accent);
+    }
+
+    .about-facts {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.75rem;
+      font-size: 0.8rem;
+      margin-top: 1rem;
+    }
+
+    @media (max-width: 700px) {
+      .about-facts {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    .fact-card {
+      padding: 0.6rem 0.7rem;
+      border-radius: 0.9rem;
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+    }
+
+    .fact-label {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      margin-bottom: 0.1rem;
+    }
+
+    .fact-value {
+      font-size: 0.9rem;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.7rem;
+      font-size: 0.8rem;
+    }
+
+    @media (max-width: 600px) {
+      .skills-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .skills-group-title {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-muted);
+      margin-bottom: 0.4rem;
+    }
+
+    .skills-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .skills-tag {
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      color: var(--text);
+    }
+
+    .skills-tag span {
+      font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco,
+        Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 0.76rem;
+    }
+
+    /* PROJECTS */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    @media (max-width: 900px) {
+      .projects-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 650px) {
+      .projects-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .project-card {
+      border-radius: var(--radius-lg);
+      background: rgba(8, 11, 31, 0.96);
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      padding: 1.05rem 1rem 0.9rem;
+      box-shadow: 0 18px 38px rgba(0, 0, 0, 0.8);
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-card::after {
+      content: "";
+      position: absolute;
+      inset: -50%;
+      background: radial-gradient(circle at top left, rgba(0, 246, 255, 0.12), transparent 60%);
+      opacity: 0;
+      transition: opacity 0.2s ease-out;
+      pointer-events: none;
+    }
+
+    .project-card:hover::after {
+      opacity: 1;
+    }
+
+    .project-title {
+      font-size: 0.96rem;
+      margin: 0;
+    }
+
+    .project-subtitle {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .project-body {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      flex: 1;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .project-tag {
+      padding: 0.25rem 0.55rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--text-muted);
+    }
+
+    .project-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.15rem;
+    }
+
+    .btn-mini {
+      padding: 0.4rem 0.8rem;
+      font-size: 0.75rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      background: rgba(15, 23, 42, 0.95);
+      color: var(--text-muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .btn-mini:hover {
+      border-color: rgba(0, 246, 255, 0.65);
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .mini-strip {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.75rem;
+      margin-top: 1.4rem;
+      font-size: 0.8rem;
+    }
+
+    @media (max-width: 768px) {
+      .mini-strip {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .mini-strip-item {
+      border-radius: 0.9rem;
+      padding: 0.7rem 0.8rem;
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px dashed rgba(148, 163, 184, 0.45);
+    }
+
+    .mini-strip-title {
+      font-size: 0.78rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .mini-strip-text {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    /* CERTIFICATIONS + COURSEWORK */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    @media (max-width: 900px) {
+      .cards-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 650px) {
+      .cards-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .cert-card {
+      border-radius: var(--radius-lg);
+      padding: 1.05rem 1rem 0.9rem;
+      background: rgba(8, 11, 31, 0.95);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      font-size: 0.82rem;
+      box-shadow: 0 18px 38px rgba(0, 0, 0, 0.8);
+    }
+
+    .cert-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.3rem;
+      gap: 0.4rem;
+    }
+
+    .cert-title {
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .badge {
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      border: 1px solid transparent;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .badge-emerald {
+      border-color: rgba(16, 185, 129, 0.7);
+      color: #4ade80;
+      background: rgba(5, 46, 22, 0.8);
+    }
+
+    .badge-slate {
+      border-color: rgba(148, 163, 184, 0.7);
+      color: #cbd5f5;
+      background: rgba(15, 23, 42, 0.9);
+    }
+
+    .badge-sky {
+      border-color: rgba(56, 189, 248, 0.7);
+      color: #38bdf8;
+      background: rgba(8, 47, 73, 0.85);
+    }
+
+    .cert-org {
+      color: var(--text-muted);
+      font-size: 0.78rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .cert-list {
+      margin: 0.35rem 0 0.55rem;
+      padding-left: 1.05rem;
+      color: var(--text-muted);
+    }
+
+    .cert-list li {
+      margin-bottom: 0.18rem;
+    }
+
+    .cert-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .course-card {
+      border-radius: var(--radius-lg);
+      padding: 0.9rem 0.9rem 0.8rem;
+      background: rgba(8, 11, 31, 0.96);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      font-size: 0.8rem;
+    }
+
+    .course-title {
+      font-size: 0.86rem;
+      margin-bottom: 0.15rem;
+    }
+
+    .course-meta {
+      color: var(--text-muted);
+      margin-bottom: 0.4rem;
+    }
+
+    /* CONTACT */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.2fr);
+      gap: 1.5rem;
+    }
+
+    @media (max-width: 850px) {
+      .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .contact-chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .contact-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.55rem 0.9rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: rgba(15, 23, 42, 0.95);
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      text-decoration: none;
+    }
+
+    .contact-chip i {
+      color: var(--accent);
+    }
+
+    .contact-chip:hover {
+      border-color: rgba(0, 246, 255, 0.6);
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .contact-note {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 0.35rem;
+    }
+
+    .form {
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+      font-size: 0.85rem;
+    }
+
+    .form-label {
+      display: block;
+      margin-bottom: 0.2rem;
+      color: var(--text-muted);
+    }
+
+    .form-control,
+    .form-textarea {
+      width: 100%;
+      border-radius: 0.8rem;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      background: rgba(8, 11, 31, 0.96);
+      color: var(--text);
+      padding: 0.55rem 0.75rem;
+      font-family: inherit;
+      font-size: 0.85rem;
+      outline: none;
+      transition: border-color 0.15s ease-out, box-shadow 0.15s ease-out,
+        background 0.15s ease-out;
+    }
+
+    .form-control:focus,
+    .form-textarea:focus {
+      border-color: rgba(0, 246, 255, 0.75);
+      box-shadow: 0 0 0 1px rgba(0, 246, 255, 0.5);
+      background: rgba(15, 23, 42, 0.98);
+    }
+
+    .form-textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    .invalid {
+      border-color: #f97373 !important;
+    }
+
+    .invalid-msg {
+      display: none;
+      font-size: 0.75rem;
+      color: #fecaca;
+      margin-top: 0.15rem;
+    }
+
+    .invalid + .invalid-msg {
+      display: block;
+    }
+
+    .form-note {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      margin-top: 0.4rem;
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid rgba(148, 163, 184, 0.35);
+      padding: 1.1rem 0 1.3rem;
+      margin-top: 0.75rem;
+      background: rgba(5, 8, 22, 0.98);
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    @media (max-width: 700px) {
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    .footer-links {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+    }
+
+    .footer-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+
+    .footer-links a:hover {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    /* REVEAL ANIMATIONS */
+    .reveal {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    }
+
+    .reveal.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
   </style>
-  
-  <!-- JSON-LD (updated credentials) -->
+
+  <!-- JSON-LD from original (updated to this domain if needed) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -47,7 +1258,12 @@
       "https://www.linkedin.com/in/abir-hasan-shuvo-762961308"
     ],
     "jobTitle": "IT/Cybersecurity Student",
-    "address": {"@type":"PostalAddress","addressLocality":"Melbourne","addressRegion":"VIC","addressCountry":"AU"},
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Melbourne",
+      "addressRegion": "VIC",
+      "addressCountry": "AU"
+    },
     "hasCredential": [
       {
         "@type": "EducationalOccupationalCredential",
@@ -66,398 +1282,762 @@
   </script>
 </head>
 <body>
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg sticky-top sticky-top-blur border-bottom">
-    <div class="container">
-      <a class="navbar-brand fw-semibold" href="#home">&lt;AbirShuvo.dev/&gt;</a>
+  <!-- NAVBAR -->
+  <header class="nav" id="top">
+    <div class="container nav-inner">
+      <div class="nav-left">
+        <div class="logo-badge">
+          <span class="logo-dot"></span>
+          <span>CYBER PORTFOLIO</span>
+        </div>
+        <div class="brand">&lt;abir.shuvo /&gt;</div>
+      </div>
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <i class="fa-solid fa-bars"></i>
       </button>
-      <div class="collapse navbar-collapse" id="nav">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-          <li class="nav-item"><a class="nav-link" href="#certs">Certifications</a></li>
-          <li class="nav-item"><a class="nav-link" href="#coursework">Coursework</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-          <li class="nav-item ms-lg-3">
-            <button id="themeToggle" class="btn btn-outline-secondary btn-sm" type="button" aria-label="Toggle dark mode">
-              <i class="fa-solid fa-moon"></i>
-            </button>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
 
-  <!-- Hero / Home -->
-  <header id="home" class="hero py-5 py-md-6">
-    <div class="container">
-      <div class="row align-items-center g-4">
-        <div class="col-md-8">
-          <span class="pill px-3 py-1 bg-primary-subtle text-primary fw-semibold small shadow-soft">Cybersecurity • Networking • UX for Security</span>
-          <h1 class="display-5 fw-bold my-3 gradient-text">Hi, I'm Abir Hasan Shuvo</h1>
-          <p class="lead mb-4">IT/Cybersecurity student in Melbourne focused on networking, secure web, and human-centred security. I build practical tools, document cleanly, and ship fast.</p>
-          <div class="d-flex gap-3 flex-wrap">
-            <a class="btn btn-primary btn-lg" href="#projects"><i class="fa-solid fa-code me-2"></i>View Projects</a>
-            <a class="btn btn-outline-dark btn-lg" href="assets/Abir-Hasan-Shuvo-CV.pdf" target="_blank"><i class="fa-solid fa-file-arrow-down me-2"></i>Download CV</a>
-            <a class="btn btn-outline-info btn-lg" href="https://www.linkedin.com/in/abir-hasan-shuvo-762961308" target="_blank"><i class="fa-brands fa-linkedin me-2"></i>LinkedIn</a>
-            <a class="btn btn-outline-primary btn-lg" href="#contact"><i class="fa-solid fa-envelope me-2"></i>Email</a>
-          </div>
-        </div>
-        <div class="col-md-4 text-md-end text-center">
-          <img class="avatar" src="assets/abir-headshot.jpg" alt="Headshot of Abir Hasan Shuvo" />
-          <div class="form-text"></div>
-        </div>
-      </div>
+      <nav class="nav-links" id="navLinks">
+        <button class="nav-link" data-target="#about"><span>About</span></button>
+        <button class="nav-link" data-target="#projects"><span>Projects</span></button>
+        <button class="nav-link" data-target="#certs"><span>Certs</span></button>
+        <button class="nav-link" data-target="#coursework"><span>Coursework</span></button>
+        <button class="nav-link" data-target="#contact"><span>Contact</span></button>
+        <a class="nav-cta" href="assets/Abir-Hasan-Shuvo-CV.pdf" target="_blank" rel="noopener">
+          <i class="fa-solid fa-file-arrow-down"></i>
+          <span>Download&nbsp;CV</span>
+        </a>
+      </nav>
     </div>
   </header>
 
-  <!-- About -->
-  <section id="about" class="py-5">
-    <div class="container">
-      <div class="row align-items-center g-4">
-        <div class="col-lg-7">
-          <h2 class="h1 mb-3">About</h2>
-          <p>Second-year <strong>Cybersecurity</strong> student with hands-on experience across <em>Python, SQL, HTML/CSS, networking</em> and security fundamentals (OWASP, MFA, zero trust). I enjoy turning messy problems into clear, accessible systems that people actually use.</p>
-          <ul class="list-unstyled small">
-            <li><i class="fa-solid fa-check me-2 text-success"></i>Currently diving into: <strong>OWASP Top 10</strong>, <strong>Linux hardening</strong>, and <strong>Cloud basics</strong>.</li>
-            <li><i class="fa-solid fa-check me-2 text-success"></i>Open to: part-time IT support, junior analyst, and internships.</li>
-            <li><i class="fa-solid fa-check me-2 text-success"></i>Based in <strong>Melbourne, Australia</strong>.</li>
-          </ul>
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <!-- LEFT -->
+        <div class="hero-left reveal">
+          <div class="chip-row">
+            <div class="chip chip--online">
+              <span class="chip-dot"></span>
+              <span>Available for roles</span>
+            </div>
+            <div class="chip">
+              <i class="fa-solid fa-shield-halved"></i>
+              <span>Cybersecurity &amp; Networks</span>
+            </div>
+            <div class="chip">
+              <i class="fa-solid fa-location-dot"></i>
+              <span>Melbourne • AEST</span>
+            </div>
+          </div>
+
+          <h1 class="hero-title">
+            Hi, I’m <span>Abir Hasan Shuvo</span><br />
+            Cybersecurity-driven IT student.
+          </h1>
+
+          <p class="hero-sub">
+            I’m a second-year <strong>IT / Cybersecurity student in Melbourne</strong>
+            focused on <strong>networking</strong>, <strong>secure systems</strong>,
+            and <strong>human-centred security</strong>. I care about clean
+            documentation, calm incident response, and shipping practical tools that
+            actually get used.
+          </p>
+
+          <div class="hero-cta-row">
+            <a class="btn btn-primary" href="#projects">
+              <i class="fa-solid fa-code"></i>
+              <span>View Projects</span>
+            </a>
+            <a class="btn btn-ghost" href="https://github.com/abirshuvo-glitch" target="_blank" rel="noopener">
+              <i class="fa-brands fa-github"></i>
+              <span>GitHub</span>
+            </a>
+            <a class="btn btn-soft" href="https://www.linkedin.com/in/abir-hasan-shuvo-762961308" target="_blank" rel="noopener">
+              <i class="fa-brands fa-linkedin"></i>
+              <span>LinkedIn</span>
+            </a>
+          </div>
+
+          <div class="hero-status-grid">
+            <div class="status-card">
+              <div class="status-label">Current focus</div>
+              <div class="status-value">SOC basics · SIEM · logs</div>
+            </div>
+            <div class="status-card">
+              <div class="status-label">Open to</div>
+              <div class="status-value status-chip-ok">Part-time · Internship</div>
+            </div>
+            <div class="status-card">
+              <div class="status-label">Location</div>
+              <div class="status-value">Melbourne, AU</div>
+            </div>
+          </div>
         </div>
-        <div class="col-lg-5">
-          <div class="p-4 border rounded-4 h-100 shadow-soft">
-            <h3 class="h5 mb-3">Skills</h3>
-            <div class="row g-2 small">
-              <div class="col-6"><div class="fw-semibold">Languages</div><div>Python, SQL, HTML/CSS</div></div>
-              <div class="col-6"><div class="fw-semibold">Tools</div><div>Git/GitHub, Wireshark, Burp</div></div>
-              <div class="col-6"><div class="fw-semibold">Networking</div><div>CCNA basics (in progress), Subnetting</div></div>
-              <div class="col-6"><div class="fw-semibold">Security</div><div>OWASP, MFA, ZTA basics</div></div>
+
+        <!-- RIGHT -->
+        <div class="hero-right reveal">
+          <div class="hero-card">
+            <div class="hero-card-header">
+              <span>PERSONA / analyst_profile.json</span>
+              <span style="font-family: 'JetBrains Mono', ui-monospace; font-size: 0.7rem; color: var(--accent);">
+                status: &lt;learning_mode /&gt;
+              </span>
+            </div>
+
+            <div class="hero-headshot-row">
+              <img
+                class="avatar"
+                src="assets/abir-headshot.jpg"
+                alt="Headshot of Abir Hasan Shuvo"
+              />
+              <div>
+                <div class="hero-id-title">ID: STU-CYB-VIC</div>
+                <div class="hero-name">Abir Hasan Shuvo</div>
+                <div class="hero-role">Cybersecurity &amp; IT Student</div>
+              </div>
+            </div>
+
+            <div class="hero-metadata">
+              <div class="meta-item">
+                <div class="meta-label">Path</div>
+                <div class="meta-value">Junior SOC · Analyst</div>
+              </div>
+              <div class="meta-item">
+                <div class="meta-label">Stack</div>
+                <div class="meta-value">Python · SQL · Linux</div>
+              </div>
+              <div class="meta-item">
+                <div class="meta-label">Strengths</div>
+                <div class="meta-value">Docs · UX · Detail</div>
+              </div>
+              <div class="meta-item">
+                <div class="meta-label">Signal</div>
+                <div class="meta-value">Risk · Incident · BCP</div>
+              </div>
+            </div>
+
+            <div class="hero-tags">
+              <span class="hero-tag">OCTAVE · Risk</span>
+              <span class="hero-tag">SOC mindset</span>
+              <span class="hero-tag">Networking basics (CCNA)</span>
+              <span class="hero-tag">Secure web &amp; SQL</span>
+            </div>
+
+            <div class="hero-log">
+              <div class="hero-log-line">[INFO] Loading <span>student_profile</span> … OK</div>
+              <div class="hero-log-line">[INFO] Focus areas: <span>OWASP · Linux hardening · cloud basics</span></div>
+              <div class="hero-log-line">[READY] Accepting: <span>internships · part-time IT support · junior analyst</span></div>
+            </div>
+          </div>
+
+          <div class="hero-mini-panel">
+            <div class="mini-card">
+              <div class="mini-card-title">Operating Context</div>
+              <div class="mini-chip-row">
+                <div class="mini-chip">Student · 2nd year</div>
+                <div class="mini-chip">Cyber &amp; networking units</div>
+                <div class="mini-chip">Hands-on labs</div>
+              </div>
+              <div class="hero-scroller">
+                <i class="fa-solid fa-arrow-down-long"></i>
+                <span>Scroll to see project evidence and coursework.</span>
+              </div>
+            </div>
+            <div class="mini-card">
+              <div class="mini-card-title">Security Themes</div>
+              <div class="mini-chip-row">
+                <div class="mini-chip">Threats &amp; CIA triad</div>
+                <div class="mini-chip">IR playbooks</div>
+                <div class="mini-chip">BCP · RTO</div>
+                <div class="mini-chip">SIEM &amp; logs</div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Projects -->
-  <section id="projects" class="py-5 bg-body-secondary">
-    <div class="container">
-      <div class="d-flex align-items-center justify-content-between mb-3">
-        <h2 class="h1 m-0">Featured Projects</h2>
-        <span class="text-muted small">More work available on request</span>
-      </div>
+    <!-- ABOUT + SKILLS -->
+    <section id="about">
+      <div class="container">
+        <div class="section-header reveal">
+          <div>
+            <div class="section-label">01 — About</div>
+            <h2 class="section-title">Who I am and how I think about security</h2>
+          </div>
+          <p class="section-sub">
+            Cybersecurity isn’t just tooling for me; it’s about making secure behaviour
+            the default through clear systems, good interfaces, and solid fundamentals.
+          </p>
+        </div>
 
-      <div class="row g-4">
-        <!-- Project 1 -->
-        <div class="col-md-6 col-lg-4">
-          <div class="card h-100 shadow-sm">
-            <div class="card-body d-flex flex-column">
-              <h3 class="h5 card-title">Zenith Logistics — Cybersecurity Audit</h3>
-              <p class="card-text">Applied the OCTAVE risk framework to a logistics provider; prioritized risks (MFA, IR playbooks, ZTA) and mapped controls across Prevent/Detect/Correct.</p>
-              <div class="project-badges mb-3">
-                <span class="badge text-bg-warning">Risk</span>
-                <span class="badge text-bg-dark">OCTAVE</span>
-                <span class="badge text-bg-success">Mitigation</span>
+        <div class="about-grid">
+          <!-- ABOUT TEXT -->
+          <div class="panel reveal">
+            <p class="about-text">
+              I’m a <strong>second-year Cybersecurity student</strong> with a background in
+              Python, SQL, HTML/CSS, networking, and security fundamentals
+              (OWASP, MFA, zero-trust thinking). I enjoy taking messy, ambiguous problems
+              and turning them into <strong>clear, documented workflows</strong> that
+              teammates can actually follow — especially under pressure.
+            </p>
+            <p class="about-text">
+              Right now I’m diving deeper into the
+              <strong>OWASP Top 10</strong>,
+              <strong>Linux hardening</strong>, and
+              <strong>cloud basics</strong>, while building projects that look like the
+              kind of work a junior SOC analyst or security engineer would touch:
+              <strong>risk assessments</strong>, <strong>incident forms</strong>,
+              and <strong>secure data models</strong>.
+            </p>
+
+            <div class="about-pills">
+              <div class="about-pill">
+                <i class="fa-solid fa-network-wired"></i>
+                <span>Networking (CCNA track)</span>
               </div>
-              <div class="mt-auto d-flex gap-2">
-                <a class="btn btn-primary btn-sm" target="_blank" href="assets/Abir-Cybersecurity-Status-Report.pdf"><i class="fa-solid fa-file-lines me-1"></i>Report (PDF)</a>
+              <div class="about-pill">
+                <i class="fa-solid fa-database"></i>
+                <span>SQL · ERDs · normalisation</span>
+              </div>
+              <div class="about-pill">
+                <i class="fa-solid fa-user-shield"></i>
+                <span>UX for security tools</span>
+              </div>
+              <div class="about-pill">
+                <i class="fa-solid fa-file-pen"></i>
+                <span>Incident &amp; risk documentation</span>
+              </div>
+            </div>
+
+            <div class="about-facts">
+              <div class="fact-card">
+                <div class="fact-label">Based in</div>
+                <div class="fact-value">Melbourne, Australia</div>
+              </div>
+              <div class="fact-card">
+                <div class="fact-label">Open to</div>
+                <div class="fact-value">Internships &amp; part-time roles</div>
+              </div>
+              <div class="fact-card">
+                <div class="fact-label">Learning loop</div>
+                <div class="fact-value">Labs → notes → reflection</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SKILLS -->
+          <div class="panel panel--soft reveal">
+            <div class="skills-grid">
+              <div>
+                <div class="skills-group-title">Languages &amp; tooling</div>
+                <div class="skills-tags">
+                  <div class="skills-tag"><span>Python</span></div>
+                  <div class="skills-tag"><span>SQL</span></div>
+                  <div class="skills-tag"><span>HTML · CSS</span></div>
+                  <div class="skills-tag"><span>Git · GitHub</span></div>
+                </div>
+              </div>
+              <div>
+                <div class="skills-group-title">Security &amp; networking</div>
+                <div class="skills-tags">
+                  <div class="skills-tag"><span>CCNA basics</span></div>
+                  <div class="skills-tag"><span>Subnetting</span></div>
+                  <div class="skills-tag"><span>Wireshark</span></div>
+                  <div class="skills-tag"><span>Burp (labs)</span></div>
+                </div>
+              </div>
+              <div>
+                <div class="skills-group-title">Security concepts</div>
+                <div class="skills-tags">
+                  <div class="skills-tag"><span>OWASP Top 10</span></div>
+                  <div class="skills-tag"><span>MFA</span></div>
+                  <div class="skills-tag"><span>Zero-trust basics</span></div>
+                  <div class="skills-tag"><span>CIA · risk</span></div>
+                </div>
+              </div>
+              <div>
+                <div class="skills-group-title">Ways of working</div>
+                <div class="skills-tags">
+                  <div class="skills-tag"><span>Clean docs</span></div>
+                  <div class="skills-tag"><span>User-centred UX</span></div>
+                  <div class="skills-tag"><span>Checklists</span></div>
+                  <div class="skills-tag"><span>Calm under pressure</span></div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-        <!-- Project 2 -->
-        <div class="col-md-6 col-lg-4">
-          <div class="card h-100 shadow-sm">
-            <div class="card-body d-flex flex-column">
-              <h3 class="h5 card-title">TRADIE Incident Response — UX Prototype</h3>
-              <p class="card-text">Designed incident reporting form & dashboard in Figma with accessibility (WCAG) and clarity for high-stress workflows.</p>
-              <div class="project-badges mb-3">
-                <span class="badge text-bg-secondary">UX</span>
-                <span class="badge text-bg-info">WCAG</span>
-                <span class="badge text-bg-secondary">Figma</span>
-              </div>
-              <div class="mt-auto d-flex gap-2">
-                <a class="btn btn-primary btn-sm" target="_blank" href="assets/Abir-Project-Reflection.pdf"><i class="fa-solid fa-file-lines me-1"></i>Reflection (PDF)</a>
-                <a class="btn btn-outline-secondary btn-sm" target="_blank" href="assets/Abir-Spike-Report.pdf"><i class="fa-solid fa-shield-halved me-1"></i>Spike (PDF)</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Project 3 -->
-        <div class="col-md-6 col-lg-4">
-          <div class="card h-100 shadow-sm">
-            <div class="card-body d-flex flex-column">
-              <h3 class="h5 card-title">Fresh Bites — Digital System Analysis</h3>
-              <p class="card-text">Analysed a meal-delivery SME; produced stakeholder map, epics/user stories, activity diagrams, and ERD for a scalable platform.</p>
-              <div class="project-badges mb-3">
-                <span class="badge text-bg-primary">BA</span>
-                <span class="badge text-bg-dark">ERD</span>
-                <span class="badge text-bg-success">User Stories</span>
-              </div>
-              <div class="mt-auto d-flex gap-2">
-                <a class="btn btn-primary btn-sm" target="_blank" href="assets/Abir-FreshBites-Analysis.pdf"><i class="fa-solid fa-file-lines me-1"></i>Case (PDF)</a>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
+    </section>
 
-      <!-- Mini projects strip -->
-      <div class="row g-3 mt-1">
-        <div class="col-12"><h3 class="h6 text-uppercase text-muted mb-0">Mini Projects</h3></div>
-        <div class="col-md-4">
-          <div class="p-3 border rounded-3 h-100">
-            <div class="fw-semibold">Net Scanner CLI</div>
-            <div class="small text-muted">Python tool to ping subnet & list live hosts (labs).</div>
+    <!-- PROJECTS -->
+    <section id="projects">
+      <div class="container">
+        <div class="section-header reveal">
+          <div>
+            <div class="section-label">02 — Projects</div>
+            <h2 class="section-title">Security-flavoured work and supporting evidence</h2>
           </div>
+          <p class="section-sub">
+            These projects come from coursework and independent work, but are written,
+            structured and documented like early-career security tasks.
+          </p>
         </div>
-        <div class="col-md-4">
-          <div class="p-3 border rounded-3 h-100">
-            <div class="fw-semibold">SQLi Practice Lab</div>
-            <div class="small text-muted">Deliberately vulnerable mini-app to practise parameterised queries.</div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="p-3 border rounded-3 h-100">
-            <div class="fw-semibold">Incident Dashboard (Mock)</div>
-            <div class="small text-muted">Static Bootstrap dashboard for triage & severity tagging.</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- Licences & Certifications -->
-  <section id="certs" class="py-5">
-    <div class="container">
-      <div class="d-flex align-items-center justify-content-between mb-3">
-        <h2 class="h1 m-0"> Certifications</h2>
-        <span class="text-muted small">Verified links where possible</span>
-      </div>
-
-      <div class="row g-4">
-        <!-- Item: CCNA Intro to Cybersecurity (earned) -->
-        <div class="col-md-6 col-lg-4">
-          <div class="p-4 border rounded-4 h-100 shadow-soft">
-            <div class="d-flex align-items-center justify-content-between">
-              <div class="fw-semibold">CCNA: Introduction to Cybersecurity</div>
-              <span class="badge text-bg-success">Earned</span>
+        <div class="projects-grid">
+          <!-- Project 1 -->
+          <article class="project-card reveal">
+            <header>
+              <p class="project-subtitle">Security risk assessment</p>
+              <h3 class="project-title">Zenith Logistics — Cybersecurity Audit</h3>
+            </header>
+            <div class="project-body">
+              Applied the <strong>OCTAVE risk framework</strong> to a logistics provider:
+              identified key assets, prioritised risks, and mapped controls across
+              <strong>Prevent / Detect / Correct</strong>, with clear,
+              non-technical explanations for stakeholders.
             </div>
-            <div class="small text-muted">Cisco Networking Academy</div>
-            <ul class="mt-2 small text-body-secondary mb-3">
-              <li>Threats, vulnerabilities, CIA triad, basic controls</li>
-              <li>Security careers, ethics, and safe online behaviour</li>
-            </ul>
-            <div class="d-flex gap-2">
-              <!-- Put your actual file/URL here -->
-              <a class="btn btn-outline-primary btn-sm" target="_blank" href="assets/netacad-intro-to-cybersecurity.pdf">
-                <i class="fa-solid fa-file-lines me-1"></i>View Certificate
+            <div class="project-tags">
+              <span class="project-tag">OCTAVE</span>
+              <span class="project-tag">Risk &amp; controls</span>
+              <span class="project-tag">CIA triad</span>
+            </div>
+            <div class="project-actions">
+              <a class="btn-mini" href="assets/Abir-Cybersecurity-Status-Report.pdf" target="_blank" rel="noopener">
+                <i class="fa-solid fa-file-lines"></i>
+                <span>Read status report (PDF)</span>
               </a>
-              <a class="btn btn-outline-secondary btn-sm" target="_blank" href="https://www.credly.com/badges/9012dfb0-f33c-4586-b455-36633289f149/public_url">
-                <i class="fa-solid fa-award me-1"></i>Verify
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="project-card reveal">
+            <header>
+              <p class="project-subtitle">UX for incident workflows</p>
+              <h3 class="project-title">TRADIE Incident Response — UX Prototype</h3>
+            </header>
+            <div class="project-body">
+              Designed an <strong>incident reporting form</strong> and
+              <strong>dashboard</strong> in Figma tailored to high-stress environments:
+              strong hierarchy, clear severity tags, and flows that match how people
+              actually raise and triage incidents.
+            </div>
+            <div class="project-tags">
+              <span class="project-tag">UX</span>
+              <span class="project-tag">WCAG</span>
+              <span class="project-tag">Incident response</span>
+            </div>
+            <div class="project-actions">
+              <a class="btn-mini" href="assets/Abir-Project-Reflection.pdf" target="_blank" rel="noopener">
+                <i class="fa-solid fa-file-lines"></i>
+                <span>Design reflection (PDF)</span>
+              </a>
+              <a class="btn-mini" href="assets/Abir-Spike-Report.pdf" target="_blank" rel="noopener">
+                <i class="fa-solid fa-shield-halved"></i>
+                <span>Security spike (PDF)</span>
               </a>
             </div>
-          </div>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="project-card reveal">
+            <header>
+              <p class="project-subtitle">Systems &amp; data modelling</p>
+              <h3 class="project-title">Fresh Bites — Digital System Analysis</h3>
+            </header>
+            <div class="project-body">
+              Analysed a meal-delivery SME and produced a
+              <strong>stakeholder map</strong>, <strong>epics &amp; user stories</strong>,
+              activity diagrams, and an <strong>ERD</strong> suitable for a scalable,
+              security-conscious platform.
+            </div>
+            <div class="project-tags">
+              <span class="project-tag">BA</span>
+              <span class="project-tag">ERD</span>
+              <span class="project-tag">User stories</span>
+            </div>
+            <div class="project-actions">
+              <a class="btn-mini" href="assets/Abir-FreshBites-Analysis.pdf" target="_blank" rel="noopener">
+                <i class="fa-solid fa-file-lines"></i>
+                <span>Case study (PDF)</span>
+              </a>
+            </div>
+          </article>
         </div>
 
-        <!-- Item: CCNA Networking Basics (still in progress) -->
-        <div class="col-md-6 col-lg-4">
-          <div class="p-4 border rounded-4 h-100 shadow-soft">
-            <div class="d-flex align-items-center justify-content-between">
-              <div class="fw-semibold">CCNA: Networking Basics</div>
-              <span class="badge text-bg-secondary">In progress</span>
-            </div>
-            <div class="small text-muted">Cisco Networking Academy</div>
-            <ul class="mt-2 small text-body-secondary mb-3">
-              <li>Subnetting, routing &amp; switching fundamentals</li>
-              <li>Labs: addressing, packet capture (Wireshark)</li>
-            </ul>
-            <div class="d-flex gap-2">
-              <button class="btn btn-outline-secondary btn-sm disabled"><i class="fa-solid fa-award me-1"></i>Verify</button>
+        <!-- MINI STRIP -->
+        <div class="mini-strip">
+          <div class="mini-strip-item reveal">
+            <div class="mini-strip-title">Net Scanner CLI</div>
+            <div class="mini-strip-text">
+              Python tool to ping a subnet and list live hosts — used for lab practice and
+              understanding basic discovery patterns.
             </div>
           </div>
-        </div>
-
-        <!-- Item: Junior Cybersecurity Analyst — Career Path (in progress) -->
-        <div class="col-md-6 col-lg-4">
-          <div class="p-4 border rounded-4 h-100 shadow-soft">
-            <div class="d-flex align-items-center justify-content-between">
-              <div class="fw-semibold">Junior Cybersecurity Analyst — Career Path</div>
-              <span class="badge text-bg-info">In progress</span>
+          <div class="mini-strip-item reveal">
+            <div class="mini-strip-title">SQLi Practice Lab</div>
+            <div class="mini-strip-text">
+              Deliberately vulnerable mini-app to practise parameterised queries and see
+              how input validation and prepared statements actually block attacks.
             </div>
-            <div class="small text-muted">Focus: SOC fundamentals & early-career ops</div>
-            <ul class="mt-2 small text-body-secondary mb-3">
-              <li>SIEM &amp; log triage (Windows Event Logs, Splunk)</li>
-              <li>Alert handling &amp; playbooks: phishing, malware, brute-force</li>
-              <li>Vuln mgmt basics: CVSS, patch/compensating controls</li>
-              <li>Network fundamentals for defenders: TCP/IP, subnets, ports</li>
-              <li>Scripting for analysts: Python snippets for parsing/log enrichment</li>
-              <li>Ticket hygiene, comms, and incident documentation quality</li>
-            </ul>
-            <div class="d-flex flex-wrap gap-2">
-              <span class="badge text-bg-dark">SOC</span>
-              <span class="badge text-bg-primary">SIEM</span>
-              <span class="badge text-bg-success">Playbooks</span>
-              <span class="badge text-bg-secondary">Python</span>
+          </div>
+          <div class="mini-strip-item reveal">
+            <div class="mini-strip-title">Incident Dashboard (Mock)</div>
+            <div class="mini-strip-text">
+              Static dashboard with severity tags and queue views — a UX sandbox for
+              early-career SOC workflows.
             </div>
           </div>
         </div>
       </div>
+    </section>
 
-     
-    </div>
-  </section>
+    <!-- CERTIFICATIONS -->
+    <section id="certs">
+      <div class="container">
+        <div class="section-header reveal">
+          <div>
+            <div class="section-label">03 — Certifications</div>
+            <h2 class="section-title">Signals that I’m serious about the craft</h2>
+          </div>
+          <p class="section-sub">
+            I’m intentionally building a path aligned with entry-level security roles:
+            starting from fundamentals, then moving into SOC, logging, and real-world
+            operations.
+          </p>
+        </div>
 
-  <!-- Coursework -->
-  <section id="coursework" class="py-5">
-    <div class="container">
-      <h2 class="h1 mb-3">Coursework Highlights</h2>
-      <div class="row g-4">
-        <div class="col-md-4">
-          <div class="p-4 border rounded-4 h-100 shadow-soft">
-            <div class="fw-semibold mb-1">CLA #1 — Data Breaches</div>
-            <div class="small text-muted">CIA triad analysis &amp; Australian breach cases.</div>
-            <a class="btn btn-outline-primary btn-sm mt-3" target="_blank" href="assets/Abir-CLA1.pdf">Read (PDF)</a>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="p-4 border rounded-4 h-100 shadow-soft">
-            <div class="fw-semibold mb-1">CLA #2 — Risk Appetite &amp; Missions</div>
-            <div class="small text-muted">RBA appetite; Uni Melbourne/Zenith missions.</div>
-            <a class="btn btn-outline-primary btn-sm mt-3" target="_blank" href="assets/Abir-CLA2.pdf">Read (PDF)</a>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="p-4 border rounded-4 h-100 shadow-soft">
-            <div class="fw-semibold mb-1">CLA #3 — BCP, RTO &amp; Comms</div>
-            <div class="small text-muted">LogiFlow ransomware scenarios; IRACI roles.</div>
-            <a class="btn btn-outline-primary btn-sm mt-3" target="_blank" href="assets/Abir-CLA3.pdf">Read (PDF)</a>
-          </div>
+        <div class="cards-grid">
+          <!-- CCNA Intro to Cybersecurity -->
+          <article class="cert-card reveal">
+            <div class="cert-head">
+              <div class="cert-title">CCNA: Introduction to Cybersecurity</div>
+              <span class="badge badge-emerald">
+                <i class="fa-solid fa-check"></i>
+                <span>Earned</span>
+              </span>
+            </div>
+            <div class="cert-org">Cisco Networking Academy</div>
+            <ul class="cert-list">
+              <li>Threats, vulnerabilities, CIA triad, and basic controls.</li>
+              <li>Ethics, careers, and safe online behaviour.</li>
+            </ul>
+            <div class="cert-actions">
+              <a class="btn-mini" href="assets/netacad-intro-to-cybersecurity.pdf" target="_blank" rel="noopener">
+                <i class="fa-solid fa-file-lines"></i>
+                <span>View certificate</span>
+              </a>
+              <a class="btn-mini" href="https://www.credly.com/badges/9012dfb0-f33c-4586-b455-36633289f149/public_url" target="_blank" rel="noopener">
+                <i class="fa-solid fa-award"></i>
+                <span>Verify</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- CCNA Networking Basics (in progress) -->
+          <article class="cert-card reveal">
+            <div class="cert-head">
+              <div class="cert-title">CCNA: Networking Basics</div>
+              <span class="badge badge-slate">
+                <i class="fa-regular fa-clock"></i>
+                <span>In progress</span>
+              </span>
+            </div>
+            <div class="cert-org">Cisco Networking Academy</div>
+            <ul class="cert-list">
+              <li>Subnetting, routing &amp; switching fundamentals.</li>
+              <li>Labs with addressing and packet capture (Wireshark).</li>
+            </ul>
+            <div class="cert-actions">
+              <span class="btn-mini" style="opacity: 0.6; cursor: default;">
+                <i class="fa-solid fa-award"></i>
+                <span>Verification available after completion</span>
+              </span>
+            </div>
+          </article>
+
+          <!-- Junior Cybersecurity Analyst Path -->
+          <article class="cert-card reveal">
+            <div class="cert-head">
+              <div class="cert-title">Junior Cybersecurity Analyst — Career Path</div>
+              <span class="badge badge-sky">
+                <i class="fa-regular fa-clock"></i>
+                <span>In progress</span>
+              </span>
+            </div>
+            <div class="cert-org">Focus: SOC fundamentals &amp; early-career ops</div>
+            <ul class="cert-list">
+              <li>SIEM &amp; log triage (Windows Event Logs, Splunk style).</li>
+              <li>Alert handling: phishing, malware, brute-force scenarios.</li>
+              <li>Vuln management, CVSS, patch vs compensating controls.</li>
+              <li>Python snippets for parsing and log enrichment.</li>
+            </ul>
+          </article>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Contact -->
-  <section id="contact" class="py-5">
-    <div class="container">
-      <h2 class="h1 mb-2">Contact</h2>
-      <p class="mb-4">Best way to reach me is email or LinkedIn. I'm open to internships, part-time roles, and project collaborations.</p>
-      <div class="row g-4">
-        <!-- Contact chips -->
-        <div class="col-lg-6">
-          <div class="p-4 border rounded-4 h-100 d-flex flex-column justify-content-between">
-            <div class="d-flex flex-wrap gap-3">
+    <!-- COURSEWORK -->
+    <section id="coursework">
+      <div class="container">
+        <div class="section-header reveal">
+          <div>
+            <div class="section-label">04 — Coursework</div>
+            <h2 class="section-title">Where theory meets evidence</h2>
+          </div>
+          <p class="section-sub">
+            A small selection of assessment work that shows how I analyse breaches,
+            link risk appetite to mission, and think through BCP and incident
+            communications.
+          </p>
+        </div>
+
+        <div class="cards-grid">
+          <article class="course-card reveal">
+            <h3 class="course-title">CLA #1 — Data Breaches</h3>
+            <p class="course-meta">
+              CIA triad analysis and Australian breach case studies.
+            </p>
+            <a class="btn-mini" href="assets/Abir-CLA1.pdf" target="_blank" rel="noopener">
+              <i class="fa-solid fa-file-lines"></i>
+              <span>Read (PDF)</span>
+            </a>
+          </article>
+
+          <article class="course-card reveal">
+            <h3 class="course-title">CLA #2 — Risk Appetite &amp; Missions</h3>
+            <p class="course-meta">
+              Comparing RBA’s risk appetite with university and enterprise missions.
+            </p>
+            <a class="btn-mini" href="assets/Abir-CLA2.pdf" target="_blank" rel="noopener">
+              <i class="fa-solid fa-file-lines"></i>
+              <span>Read (PDF)</span>
+            </a>
+          </article>
+
+          <article class="course-card reveal">
+            <h3 class="course-title">CLA #3 — BCP, RTO &amp; Comms</h3>
+            <p class="course-meta">
+              LogiFlow ransomware scenarios; IRACI roles and continuity planning.
+            </p>
+            <a class="btn-mini" href="assets/Abir-CLA3.pdf" target="_blank" rel="noopener">
+              <i class="fa-solid fa-file-lines"></i>
+              <span>Read (PDF)</span>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="container">
+        <div class="section-header reveal">
+          <div>
+            <div class="section-label">05 — Contact</div>
+            <h2 class="section-title">Let’s talk about security, systems, or internships</h2>
+          </div>
+          <p class="section-sub">
+            Best way to reach me is email or LinkedIn. I’m open to cyber-adjacent IT
+            roles that give me exposure to production systems, users, and real-world
+            incidents.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- CONTACT CHIPS -->
+          <div class="panel panel--soft reveal">
+            <div class="contact-chip-row">
               <a class="contact-chip" href="mailto:abirshuvo000@gmail.com">
-                <i class="fa-solid fa-envelope"></i><span>Email</span>
+                <i class="fa-solid fa-envelope"></i>
+                <span>Email</span>
               </a>
-              <a class="contact-chip" target="_blank" href="https://www.linkedin.com/in/abir-hasan-shuvo-762961308/">
-                <i class="fa-brands fa-linkedin"></i><span>LinkedIn</span>
+              <a
+                class="contact-chip"
+                href="https://www.linkedin.com/in/abir-hasan-shuvo-762961308/"
+                target="_blank"
+                rel="noopener"
+              >
+                <i class="fa-brands fa-linkedin"></i>
+                <span>LinkedIn</span>
               </a>
-              <a class="contact-chip" target="_blank" href="https://github.com/abirshuvo-glitch">
-  <i class="fa-brands fa-github"></i><span>GitHub</span>
-</a>
-
+              <a
+                class="contact-chip"
+                href="https://github.com/abirshuvo-glitch"
+                target="_blank"
+                rel="noopener"
+              >
+                <i class="fa-brands fa-github"></i>
+                <span>GitHub</span>
+              </a>
             </div>
-            <div class="mt-3 small text-muted">Average response: within 24–48 hours (AEST).</div>
+            <p class="contact-note">
+              I usually respond within <strong>24–48 hours (AEST)</strong>. Feel free to
+              share a brief summary of your team, tech stack, and how a student could be
+              useful — I’ll reply with a focused, honest response.
+            </p>
+          </div>
+
+          <!-- CONTACT FORM (mailto) -->
+          <div class="panel reveal">
+            <form id="contactForm" class="form" novalidate>
+              <div>
+                <label class="form-label" for="name">Name</label>
+                <input
+                  class="form-control"
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Your name"
+                  required
+                />
+                <div class="invalid-msg">Please enter your name.</div>
+              </div>
+              <div>
+                <label class="form-label" for="email">Email</label>
+                <input
+                  class="form-control"
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="you@example.com"
+                  required
+                />
+                <div class="invalid-msg">Please provide a valid email address.</div>
+              </div>
+              <div>
+                <label class="form-label" for="message">Message</label>
+                <textarea
+                  class="form-textarea"
+                  id="message"
+                  name="message"
+                  placeholder="Hi Abir, we’d like to talk about…"
+                  required
+                ></textarea>
+                <div class="invalid-msg">Please write a short message.</div>
+              </div>
+              <button type="submit" class="btn btn-primary">
+                <i class="fa-solid fa-paper-plane"></i>
+                <span>Send message</span>
+              </button>
+              <div class="form-note" id="formNote" style="display: none;">
+                Opening your email client…
+              </div>
+            </form>
           </div>
         </div>
-
-        <!-- Deploy-ready mailto form -->
-        <div class="col-lg-6">
-          <form id="contactForm" class="p-4 border rounded-4" novalidate>
-            <div class="mb-3">
-              <label class="form-label" for="name">Name</label>
-              <input id="name" name="name" type="text" class="form-control" placeholder="Your name" required />
-              <div class="invalid-feedback">Please enter your name.</div>
-            </div>
-            <div class="mb-3">
-              <label class="form-label" for="email">Email</label>
-              <input id="email" name="email" type="email" class="form-control" placeholder="you@example.com" required />
-              <div class="invalid-feedback">Please provide a valid email.</div>
-            </div>
-            <div class="mb-3">
-              <label class="form-label" for="message">Message</label>
-              <textarea id="message" name="message" class="form-control" rows="4" placeholder="Hi! I'd like to talk about..." required></textarea>
-              <div class="invalid-feedback">Please write a short message.</div>
-            </div>
-            <button id="sendBtn" type="submit" class="btn btn-primary w-100">
-              <i class="fa-solid fa-paper-plane me-2"></i>Send
-            </button>
-            <div id="formNote" class="form-text mt-2 d-none">Opening your email client…</div>
-          </form>
-        </div>
       </div>
+    </section>
+  </main>
 
-      <div class="kudos mt-5 small text-muted">
-        <i class="fa-solid fa-universal-access me-2"></i>Accessible font sizes &amp; contrast • <i class="fa-solid fa-magnifying-glass me-2 ms-2"></i>SEO &amp; schema • <i class="fa-solid fa-moon me-2 ms-2"></i>Dark mode
-      </div>
-    </div>
-  </section>
-
-  <footer class="py-4 border-top">
-    <div class="container d-flex flex-wrap align-items-center justify-content-between small">
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-inner">
       <div>© <span id="year"></span> Abir Hasan Shuvo. All rights reserved.</div>
-      <div class="d-flex gap-3">
-        <a href="#home">Top</a>
-        <a target="_blank" href="assets/Abir-Hasan-Shuvo-CV.pdf">CV</a>
-        <a target="_blank" href="#projects">Source on request</a>
+      <div class="footer-links">
+        <a href="#top">Back to top</a>
+        <a href="assets/Abir-Hasan-Shuvo-CV.pdf" target="_blank" rel="noopener">CV</a>
+        <span>Designed as a security-themed portfolio.</span>
       </div>
     </div>
   </footer>
 
   <script>
     // Year
-    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById("year").textContent = new Date().getFullYear();
 
-    // Theme toggle with persistence
-    (function(){
-      const root = document.documentElement;
-      const key = 'pref-theme';
-      const btn = document.getElementById('themeToggle');
-      const saved = localStorage.getItem(key);
-      if (saved) root.setAttribute('data-bs-theme', saved);
-      btn?.addEventListener('click', () => {
-        const cur = root.getAttribute('data-bs-theme') || 'light';
-        const next = cur === 'light' ? 'dark' : 'light';
-        root.setAttribute('data-bs-theme', next);
-        localStorage.setItem(key, next);
+    // Mobile nav
+    const nav = document.querySelector(".nav");
+    const navToggle = document.getElementById("navToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    navToggle?.addEventListener("click", () => {
+      nav.classList.toggle("nav--open");
+    });
+
+    navLinks?.querySelectorAll(".nav-link").forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        const targetId = btn.getAttribute("data-target");
+        if (targetId) {
+          const el = document.querySelector(targetId);
+          if (el) {
+            window.scrollTo({
+              top: el.offsetTop - 72,
+              behavior: "smooth",
+            });
+          }
+        }
+        nav.classList.remove("nav--open");
       });
-    })();
+    });
 
-    // Deploy-ready mailto contact
-    (function(){
-      const form = document.getElementById('contactForm');
-      const note = document.getElementById('formNote');
-      const btn  = document.getElementById('sendBtn');
-
-      function validateEmail(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }
-
-      form?.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const name = document.getElementById('name');
-        const email = document.getElementById('email');
-        const message = document.getElementById('message');
-
-        let ok = true;
-        [name, email, message].forEach(i => {
-          if(!i.value.trim() || (i===email && !validateEmail(i.value))) {
-            i.classList.add('is-invalid'); ok = false;
-          } else { i.classList.remove('is-invalid'); }
+    // IntersectionObserver for reveal animations
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+            observer.unobserve(entry.target);
+          }
         });
-        if(!ok) return;
+      },
+      { threshold: 0.16 }
+    );
 
-        const subject = encodeURIComponent(`Portfolio contact from ${name.value}`);
-        const body = encodeURIComponent(`${message.value}\n\n— ${name.value}\n${email.value}`);
-        note.classList.remove('d-none');
-        btn.disabled = true;
-        window.location.href = `mailto:abirshuvo000@gmail.com?subject=${subject}&body=${body}`;
-        setTimeout(()=>{ btn.disabled = false; note.classList.add('d-none'); }, 2500);
+    document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+
+    // Contact form -> mailto
+    const form = document.getElementById("contactForm");
+    const note = document.getElementById("formNote");
+
+    function validateEmail(value) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+    }
+
+    form?.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const name = document.getElementById("name");
+      const email = document.getElementById("email");
+      const message = document.getElementById("message");
+
+      const fields = [name, email, message];
+      let valid = true;
+
+      fields.forEach((field) => {
+        field.classList.remove("invalid");
       });
-    })();
+
+      if (!name.value.trim()) {
+        name.classList.add("invalid");
+        valid = false;
+      }
+      if (!email.value.trim() || !validateEmail(email.value)) {
+        email.classList.add("invalid");
+        valid = false;
+      }
+      if (!message.value.trim()) {
+        message.classList.add("invalid");
+        valid = false;
+      }
+
+      if (!valid) return;
+
+      const subject = encodeURIComponent(
+        `Portfolio contact from ${name.value}`
+      );
+      const body = encodeURIComponent(
+        `${message.value}\n\n— ${name.value}\n${email.value}`
+      );
+
+      if (note) note.style.display = "block";
+      window.location.href = `mailto:abirshuvo000@gmail.com?subject=${subject}&body=${body}`;
+      setTimeout(() => {
+        if (note) note.style.display = "none";
+      }, 2500);
+    });
   </script>
 </body>
 </html>
